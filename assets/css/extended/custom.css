@@ -58,6 +58,11 @@
   --main-width: 860px;
 }
 
+/* Remove full-viewport centering so profile + posts sit at the top */
+.main .profile {
+  min-height: unset;
+}
+
 /* ============================================================
    Custom Variables — light (PaperMod default)
    ============================================================ */
