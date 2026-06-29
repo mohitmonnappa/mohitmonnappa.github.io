@@ -1,5 +1,5 @@
 baseURL = "https://mohitmonnappa.github.io/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Mohit's Writeups"
 paginate = 10
 

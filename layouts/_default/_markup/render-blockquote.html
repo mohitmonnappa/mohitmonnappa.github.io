@@ -1,12 +1,12 @@
 {{- $type := .AlertType -}}
 {{- if eq $type "note" -}}
-<div class="note"><b>Note —</b> {{ .Text | markdownify }}</div>
+<div class="note"><b>Note —</b> {{ .Text }}</div>
 {{- else if eq $type "tip" -}}
-<div class="note"><b>Tip —</b> {{ .Text | markdownify }}</div>
+<div class="note"><b>Tip —</b> {{ .Text }}</div>
 {{- else if eq $type "warning" -}}
-<div class="warn"><b>Heads up —</b> {{ .Text | markdownify }}</div>
+<div class="warn"><b>Heads up —</b> {{ .Text }}</div>
 {{- else if eq $type "caution" -}}
-<div class="warn"><b>Caution —</b> {{ .Text | markdownify }}</div>
+<div class="warn"><b>Caution —</b> {{ .Text }}</div>
 {{- else -}}
-<blockquote style="border-left:3px solid var(--line);padding:4px 16px;margin:18px 0;color:var(--ink-soft);">{{ .Text | markdownify }}</blockquote>
+<blockquote style="border-left:3px solid var(--line);padding:4px 16px;margin:18px 0;color:var(--ink-soft);">{{ .Text }}</blockquote>
 {{- end -}}
