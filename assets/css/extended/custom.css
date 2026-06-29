@@ -1,0 +1,254 @@
+/* ============================================================
+   Custom Variables — light (PaperMod default)
+   ============================================================ */
+:root {
+  --accent: #0b9488;
+  --accent-2: #0d7a6f;
+  --accent-soft: rgba(11, 148, 136, .10);
+  --flag: #1a7f37;
+  --flag-soft: rgba(26, 127, 55, .08);
+  --warn: #9a6700;
+  --warn-soft: rgba(154, 103, 0, .08);
+  --cb-bg: #0d1117;
+  --cb-ink: #e6edf3;
+  --cb-gutter: #484f58;
+  --cb-line: #1c2128;
+  --radius: 6px;
+}
+
+.dark {
+  --accent: #3dc9b0;
+  --accent-2: #56ddc5;
+  --accent-soft: rgba(61, 201, 176, .12);
+  --flag: #3fb950;
+  --flag-soft: rgba(63, 185, 80, .12);
+  --warn: #d29922;
+  --warn-soft: rgba(210, 153, 34, .12);
+  --cb-bg: #010409;
+}
+
+/* ============================================================
+   Code Blocks (render-codeblock.html hook)
+   ============================================================ */
+.code {
+  margin: 20px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.code-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #161b22;
+  padding: 8px 14px;
+  border-bottom: 1px solid #21262d;
+}
+.code-head .d { width: 10px; height: 10px; border-radius: 50%; background: #30363d; flex-shrink: 0; }
+.code-head .fname { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8d96a0; }
+.code-head .lang { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6e7681; text-transform: uppercase; letter-spacing: .06em; }
+.code-body { display: flex; background: var(--cb-bg); overflow-x: auto; }
+.gutter {
+  flex: none;
+  padding: 14px 12px 14px 16px;
+  text-align: right;
+  color: var(--cb-gutter);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  user-select: none;
+  -webkit-user-select: none;
+  border-right: 1px solid var(--cb-line);
+  margin-right: 14px;
+  white-space: pre;
+}
+.src-wrap { flex: 1; min-width: 0; overflow: hidden; }
+.src-wrap .highlight { margin: 0; background: transparent; }
+.src-wrap pre.chroma {
+  margin: 0;
+  padding: 14px 16px 14px 0;
+  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--cb-ink);
+  white-space: pre;
+  overflow: visible;
+}
+.src-wrap code { background: transparent; color: inherit; padding: 0; border-radius: 0; font-size: inherit; font-family: inherit; }
+
+/* Chroma token colors */
+.chroma .err { color: #f85149; }
+.chroma .k,.chroma .kc,.chroma .kd,.chroma .kn,.chroma .kp,.chroma .kr,.chroma .kt { color: #ff7b72; }
+.chroma .s,.chroma .sa,.chroma .sb,.chroma .sc,.chroma .dl,.chroma .sd,.chroma .s2,.chroma .se,.chroma .sh,.chroma .si,.chroma .sx,.chroma .sr,.chroma .s1,.chroma .ss { color: #a5d6ff; }
+.chroma .c,.chroma .ch,.chroma .cm,.chroma .c1,.chroma .cs,.chroma .cp,.chroma .cpf { color: #8b949e; font-style: italic; }
+.chroma .m,.chroma .mb,.chroma .mf,.chroma .mh,.chroma .mi,.chroma .il,.chroma .mo,.chroma .mx { color: #79c0ff; }
+.chroma .nf,.chroma .fm { color: #d2a8ff; }
+.chroma .nb,.chroma .no { color: #79c0ff; }
+.chroma .nt { color: #7ee787; }
+.chroma .o,.chroma .ow,.chroma .p,.chroma .w { color: var(--cb-ink); }
+
+/* ============================================================
+   Callouts (render-blockquote.html hook)
+   ============================================================ */
+.note {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  margin: 18px 0;
+  font-size: 14.5px;
+}
+.note b { color: var(--accent); }
+.note p { margin: 0; }
+
+.warn {
+  border-left: 3px solid var(--warn);
+  background: var(--warn-soft);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  margin: 18px 0;
+  font-size: 14.5px;
+}
+.warn b { color: var(--warn); }
+.warn p { margin: 0; }
+
+/* ============================================================
+   Flag Box
+   ============================================================ */
+.flagbox {
+  border: 1px dashed var(--flag);
+  background: var(--flag-soft);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin: 24px 0;
+}
+.flagbox small {
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--flag);
+  font-weight: 600;
+}
+.flagbox .val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14.5px;
+  margin-top: 5px;
+  word-break: break-all;
+}
+
+/* ============================================================
+   Writeup Badges
+   ============================================================ */
+.writeup-badges { display: flex; gap: 8px; margin: 6px 0 10px; flex-wrap: wrap; }
+.badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.badge-cat { background: var(--accent-soft); color: var(--accent); }
+.badge-diff { background: var(--flag-soft); color: var(--flag); }
+
+/* ============================================================
+   Tags
+   ============================================================ */
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--border); }
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 3px 10px;
+  border-radius: 4px;
+  transition: background .15s, color .15s;
+}
+.tag:hover { background: var(--accent); color: #fff; }
+
+/* ============================================================
+   Related Writeups
+   ============================================================ */
+.related h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  color: var(--secondary);
+  margin: 36px 0 14px;
+}
+.rgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.rcard {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: block;
+  transition: border-color .15s, transform .15s;
+}
+.rcard:hover { border-color: var(--accent); transform: translateY(-2px); }
+.rcard .m { font-size: 11px; color: var(--secondary); font-family: 'JetBrains Mono', monospace; }
+.rcard h4 { font-size: 15px; font-weight: 600; margin: 5px 0 0; color: var(--primary); }
+
+/* ============================================================
+   Projects — List Page
+   ============================================================ */
+.page-header { padding: 20px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
+.page-header h1 { margin: 0 0 6px; }
+.page-header p { color: var(--secondary); margin: 0; font-size: 15px; }
+
+.project-section { margin-top: 36px; }
+.project-section-hd {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--secondary);
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-item { padding: 18px 0; border-bottom: 1px solid var(--border); }
+.post-item-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 5px; }
+.post-item h3 { font-size: 16px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.post-item h3 a { color: var(--primary); }
+.post-item h3 a:hover { color: var(--accent); }
+.pi-meta { font-size: 12.5px; color: var(--secondary); font-family: 'JetBrains Mono', monospace; }
+.pi-summary { color: var(--secondary); font-size: 14.5px; margin: 0; }
+
+.pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+.pill.cat { background: var(--accent-soft); color: var(--accent); }
+
+/* ============================================================
+   Projects — Single Page
+   ============================================================ */
+.project-single { padding: 12px 0 60px; }
+.crumb { font-size: 13px; color: var(--secondary); font-family: 'JetBrains Mono', monospace; }
+.crumb a { color: var(--secondary); }
+.crumb a:hover { color: var(--accent); }
+.project-tech { display: flex; gap: 6px; flex-wrap: wrap; margin: 18px 0 4px; }
+.project-lead { color: var(--secondary); font-size: 17px; margin: 6px 0 0; }
+.project-gh-link { display: inline-flex; align-items: center; margin-top: 24px; font-size: 14px; font-weight: 500; color: var(--accent); }
+.project-gh-link:hover { text-decoration: underline; }
+
+/* ============================================================
+   Accent color for PaperMod elements
+   ============================================================ */
+.post-tags li a:hover,
+.post-nav .next:hover,
+.post-nav .prev:hover { color: var(--accent) !important; }
+
+a.active { color: var(--accent); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 640px) {
+  .rgrid { grid-template-columns: 1fr; }
+}

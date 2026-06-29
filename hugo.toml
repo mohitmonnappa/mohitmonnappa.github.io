@@ -2,6 +2,7 @@ baseURL = "https://mohitmonnappa.github.io/"
 locale = "en-us"
 title = "Mohit Monnappa"
 paginate = 10
+theme = "PaperMod"
 
 [markup]
   [markup.highlight]
@@ -22,8 +23,71 @@ paginate = 10
   tag = "tags"
   category = "categories"
 
+[[menu.main]]
+  identifier = "writeups"
+  name = "Writeups"
+  url = "/writeups/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 40
+
 [params]
+  env = "production"
   description = "CTFs · Projects · Notes"
+  author = "Mohit Monnappa T N"
   github = "https://github.com/mohitmonnappa"
   linkedin = "https://linkedin.com/in/mohit-monnappa"
-  author = "Mohit Monnappa T N"
+
+  defaultTheme = "light"
+
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = false
+  ShowToc = true
+  TocOpen = false
+  mainSections = ["writeups"]
+
+  [params.profileMode]
+    enabled = true
+    title = "Mohit Monnappa"
+    subtitle = "Cybersecurity enthusiast · CTF player · ISE student at BMSIT&M, Bangalore"
+
+    [[params.profileMode.buttons]]
+      name = "Writeups"
+      url = "/writeups/"
+
+    [[params.profileMode.buttons]]
+      name = "Projects"
+      url = "/projects/"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/mohitmonnappa"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/mohit-monnappa"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:monnappamohit@gmail.com"

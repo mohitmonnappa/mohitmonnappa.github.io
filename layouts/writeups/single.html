@@ -1,0 +1,62 @@
+{{- define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    {{- if or .Params.category .Params.difficulty }}
+    <div class="writeup-badges">
+      {{- with .Params.category }}<span class="badge badge-cat">{{ . }}</span>{{ end -}}
+      {{- with .Params.difficulty }}<span class="badge badge-diff">{{ . }}</span>{{ end -}}
+    </div>
+    {{- end }}
+    <h1 class="post-title">{{- .Title | markdownify -}}</h1>
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      {{- if .Params.flag }}&ensp;·&ensp;<span>🚩 Flag captured</span>{{- end }}
+    </div>
+    {{- end }}
+  </header>
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }}
+  <div class="post-content md-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+    {{- with .Params.flag }}
+    <div class="flagbox">
+      <small>Flag</small>
+      <div class="val">{{ . }}</div>
+    </div>
+    {{- end }}
+    {{- with .Params.tags }}
+    <div class="tags">
+      {{- range . }}<a class="tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">{{ . }}</a>{{ end }}
+    </div>
+    {{- end }}
+    {{- $cat := .Params.category }}
+    {{- $cur := .Permalink }}
+    {{- $related := where .Site.RegularPages "Params.category" $cat }}
+    {{- $related = where $related "Permalink" "ne" $cur }}
+    {{- $related = first 2 $related }}
+    {{- if $related }}
+    <div class="related">
+      <h3>Related writeups</h3>
+      <div class="rgrid">
+        {{- range $related }}
+        <a class="rcard" href="{{ .Permalink }}">
+          <div class="m">{{ with .Params.category }}{{ . | upper }}{{ end }}{{ with .Params.difficulty }} · {{ . | upper }}{{ end }}</div>
+          <h4>{{ .Title }}</h4>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+  </div>
+  <footer class="post-footer">
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+  </footer>
+</article>
+{{- end }}
