@@ -1,26 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Writeups on Mohit Monnappa</title><link>https://mohitmonnappa.github.io/writeups/</link><description>Recent content in Writeups on Mohit Monnappa</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mohitmonnappa.github.io/writeups/index.xml" rel="self" type="application/rss+xml"/><item><title>HappyVault — Reading other people's notes (IDOR)</title><link>https://mohitmonnappa.github.io/writeups/happyvault-idor/</link><pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/writeups/happyvault-idor/</guid><description>&lt;h2 id="the-challenge"&gt;The challenge&lt;/h2&gt;
-&lt;p&gt;HappyVault is a small &amp;ldquo;private notes&amp;rdquo; web app. You get an account,
-you save notes, nobody else can see them. Our job is to read the
-note belonging to the admin, which contains the flag.&lt;/p&gt;
-&lt;p&gt;Target: &lt;code&gt;https://happyvault.chal.example/&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id="recon"&gt;Recon&lt;/h2&gt;
-&lt;p&gt;After logging in, opening a note makes a GET request with a numeric id:&lt;/p&gt;
-&lt;div class="code"&gt;
-&lt;div class="code-head"&gt;
-&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="lang"&gt;bash&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="code-body"&gt;
-&lt;div class="gutter" aria-hidden="true"&gt;1
-2
-3
-4&lt;/div&gt;
-&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ curl -s -b &lt;span class="s2"&gt;&amp;#34;session=eyJ1aWQiOj4...&amp;#34;&lt;/span&gt; &lt;span class="se"&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; https://happyvault.chal.example/api/note?id&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4081&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;id&amp;#34;&lt;/span&gt;:4081,&lt;span class="s2"&gt;&amp;#34;owner&amp;#34;&lt;/span&gt;:&lt;span class="s2"&gt;&amp;#34;naren&amp;#34;&lt;/span&gt;,&lt;span class="s2"&gt;&amp;#34;body&amp;#34;&lt;/span&gt;:&lt;span class="s2"&gt;&amp;#34;grocery list&amp;#34;&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;The server returns the note based on id alone — no ownership check.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit — Level 33</title><link>https://mohitmonnappa.github.io/writeups/bandit-level-33/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/writeups/bandit-level-33/</guid><description>&lt;p&gt;&lt;strong&gt;All levels solved!!&lt;/strong&gt; 🎉&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit — Level 32</title><link>https://mohitmonnappa.github.io/writeups/bandit-level-32/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/writeups/bandit-level-32/</guid><description>&lt;p&gt;In Linux, using &lt;code&gt;printenv&lt;/code&gt; will give all the environment variables. Some common ones that are good to know:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Walkthrough on Mohit Monnappa</title><link>https://mohitmonnappa.github.io/tags/walkthrough/</link><description>Recent content in Walkthrough on Mohit Monnappa</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://mohitmonnappa.github.io/tags/walkthrough/index.xml" rel="self" type="application/rss+xml"/><item><title>OverTheWire: Bandit — Level 33</title><link>https://mohitmonnappa.github.io/writeups/bandit-level-33/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/writeups/bandit-level-33/</guid><description>&lt;p&gt;&lt;strong&gt;All levels solved!!&lt;/strong&gt; 🎉&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit — Level 32</title><link>https://mohitmonnappa.github.io/writeups/bandit-level-32/</link><pubDate>Wed, 31 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/writeups/bandit-level-32/</guid><description>&lt;p&gt;In Linux, using &lt;code&gt;printenv&lt;/code&gt; will give all the environment variables. Some common ones that are good to know:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
