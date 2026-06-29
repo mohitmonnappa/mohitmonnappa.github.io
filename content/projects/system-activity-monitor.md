@@ -2,6 +2,7 @@
 title: "System Activity Monitor"
 subtitle: "Endpoint Visibility Tool"
 tech: ["Python", "PyInstaller"]
+category: "Security"
 date: 2024-10-01
 summary: "Python-based monitoring tool for endpoint visibility — captures system info, clipboard activity, IP data, audio, and screenshots. Packaged as a standalone executable."
 ---

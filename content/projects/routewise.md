@@ -2,6 +2,7 @@
 title: "RouteWise AI Gateway"
 subtitle: "Intelligent LLM Traffic Controller"
 tech: ["Python"]
+category: "AI & Automation"
 date: 2025-03-01
 summary: "AI gateway that dynamically routes prompts to fast or capable LLMs based on task complexity, cutting cost by 25%+ and achieving 15%+ cache hit rates."
 ---

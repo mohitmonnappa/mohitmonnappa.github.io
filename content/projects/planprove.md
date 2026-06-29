@@ -2,6 +2,7 @@
 title: "PlanProve"
 subtitle: "Improving AI Agent Planning"
 tech: ["Python"]
+category: "AI & Automation"
 date: 2024-08-01
 summary: "AI agent framework built with abstract classes for modular tool support, achieving a 50% improvement in task-planning accuracy through prompt engineering."
 ---

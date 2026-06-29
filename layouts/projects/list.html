@@ -2,22 +2,36 @@
 <div class="wrap">
   <div class="page-header">
     <h1>{{ .Title }}</h1>
-    <p>{{ .Site.Params.author | default "Mohit" }}'s projects — security tools, AI systems, and other builds.</p>
+    <p>Things I've built — security tools, AI systems, and automation.</p>
   </div>
 
-  <div class="projects-grid">
-    {{ range .Pages.ByDate.Reverse }}
-    <a class="project-card" href="{{ .Permalink }}">
-      <h3>{{ .Title }}</h3>
-      {{ with .Params.subtitle }}<div class="project-subtitle-card">{{ . }}</div>{{ end }}
-      {{ with .Params.tech }}
-      <div class="project-tech">
-        {{ range . }}<span>{{ . }}</span>{{ end }}
-      </div>
-      {{ end }}
-      {{ with .Summary }}<p>{{ . | plainify | truncate 160 }}</p>{{ end }}
-    </a>
+  {{/* Collect unique categories in order of first appearance */}}
+  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ $seen := slice }}
+  {{ range $pages }}
+    {{ $cat := .Params.category | default "Other" }}
+    {{ if not (in $seen $cat) }}
+      {{ $seen = $seen | append $cat }}
     {{ end }}
+  {{ end }}
+
+  {{ range $seen }}
+  {{ $cat := . }}
+  <div class="project-section">
+    <h2 class="project-section-hd">{{ $cat }}</h2>
+    <ul class="post-list">
+      {{ range where $pages "Params.category" $cat }}
+      <li class="post-item">
+        <div class="post-item-top">
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ range .Params.tech }}<span class="pill cat">{{ . }}</span>{{ end }}
+        </div>
+        {{ with .Params.subtitle }}<span class="pi-meta">{{ . }}</span>{{ end }}
+        {{ with .Summary }}<p class="pi-summary">{{ . | plainify | truncate 180 }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
   </div>
+  {{ end }}
 </div>
 {{ end }}
