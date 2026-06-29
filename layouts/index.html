@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="home-intro">
+    <h2>Hello, I'm Mohit 👋</h2>
+    <p>
+      I'm a cybersecurity enthusiast based in Bangalore, India.
+      I enjoy competing in CTF (Capture the Flag) competitions and breaking things — legally.
+      This site is where I document my writeups, techniques, and notes from challenges I've solved.
+    </p>
+    <p>
+      My interests include web exploitation, binary exploitation, cryptography, and network security.
+      I'm currently learning more about [<em>your focus area — update this</em>].
+    </p>
+    <p>
+      If you're here to learn, feel free to dig through the writeups.
+      If something helped you, consider reaching out on <a href="{{ .Site.Params.github }}" style="color:var(--accent)" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </div>
+
+  <div class="home-posts">
+    <h2>Latest writeups</h2>
+    {{ $writeups := where .Site.RegularPages "Section" "writeups" }}
+    {{ $writeups = $writeups.ByDate.Reverse }}
+    {{ if $writeups }}
+    <ul class="post-list">
+      {{ range first 5 $writeups }}
+      <li class="post-item">
+        <div class="post-item-top">
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.category }}<span class="pill cat">{{ . }}</span>{{ end }}
+          {{ with .Params.difficulty }}<span class="pill diff">{{ . }}</span>{{ end }}
+        </div>
+        <span class="pi-meta">{{ .Date.Format "2006-01-02" }} · {{ .ReadingTime }} min read</span>
+        {{ with .Summary }}<p class="pi-summary">{{ . | plainify | truncate 140 }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    <a class="view-all" href="{{ "/writeups/" | relURL }}">View all writeups →</a>
+    {{ else }}
+    <p style="color:var(--ink-soft); padding: 32px 0;">No writeups yet — check back soon.</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

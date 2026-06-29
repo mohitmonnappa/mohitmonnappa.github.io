@@ -1,0 +1,15 @@
+{{- $lang := .Type | default "text" -}}
+{{- $trimmed := trim .Inner "\n" -}}
+{{- $lines := split $trimmed "\n" -}}
+<div class="code">
+  <div class="code-head">
+    <span class="d"></span><span class="d"></span><span class="d"></span>
+    {{- with .Attributes.filename }}<span class="fname">{{ . }}</span>{{ end -}}
+    <span class="lang">{{ $lang }}</span>
+  </div>
+  <div class="code-body">
+    <div class="gutter" aria-hidden="true">{{ range $i, $_ := $lines }}{{ if $i }}
+{{ end }}{{ add $i 1 }}{{ end }}</div>
+    <div class="src-wrap">{{ transform.Highlight .Inner .Type "" }}</div>
+  </div>
+</div>

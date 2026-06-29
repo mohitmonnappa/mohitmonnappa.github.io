@@ -1,0 +1,96 @@
+{{ define "main" }}
+<div class="wrap">
+  {{ if eq .Section "writeups" }}
+  <article>
+    <div class="crumb">
+      <a href="{{ "/writeups/" | relURL }}">writeups</a>
+      {{ with .Params.category }} / <a href="{{ (printf "/categories/%s/" (. | urlize)) | relURL }}">{{ . | lower }}</a>{{ end }}
+      / {{ .Slug }}
+    </div>
+
+    <div class="badges">
+      {{ with .Params.category }}<span class="pill cat">{{ . }}</span>{{ end }}
+      {{ with .Params.difficulty }}<span class="pill diff">Difficulty: {{ . }}</span>{{ end }}
+    </div>
+
+    <h1>{{ .Title }}</h1>
+
+    <div class="post-meta">
+      <span>📅 Published {{ .Date.Format "2006-01-02" }}</span>
+      <span>⏱ {{ .ReadingTime }} min read</span>
+      {{ if .Params.flag }}<span>🚩 Flag captured</span>{{ end }}
+    </div>
+
+    {{ if or .Params.prev .Params.next }}
+    <div class="seqnav">
+      {{ with .Params.prev }}
+      <a class="prev" href="{{ .url }}">
+        <small>← Previous</small>
+        {{ .title }}
+      </a>
+      {{ else }}<span></span>{{ end }}
+      {{ with .Params.next }}
+      <a class="next" href="{{ .url }}">
+        <small>Next →</small>
+        {{ .title }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if .TableOfContents }}
+    <div class="toc">
+      <b>On this page</b>
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+  </article>
+
+  <div class="prose">
+    {{ .Content }}
+
+    {{ with .Params.flag }}
+    <div class="flagbox">
+      <small>Flag</small>
+      <div class="val">{{ . }}</div>
+    </div>
+    {{ end }}
+
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}
+      <a class="tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relURL }}">#{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ $cat := .Params.category }}
+    {{ $current := .Permalink }}
+    {{ $related := where .Site.RegularPages "Params.category" $cat }}
+    {{ $related = where $related "Permalink" "ne" $current }}
+    {{ $related = first 2 $related }}
+    {{ if $related }}
+    <div class="related">
+      <h3>Related writeups</h3>
+      <div class="rgrid">
+        {{ range $related }}
+        <a class="rcard" href="{{ .Permalink }}">
+          <div class="m">{{ with .Params.category }}{{ . | upper }}{{ end }}{{ with .Params.difficulty }} · {{ . | upper }}{{ end }}</div>
+          <h4>{{ .Title }}</h4>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+
+  {{ else }}
+  {{/* Generic single page (About, etc.) */}}
+  <div class="page-body">
+    <h1>{{ .Title }}</h1>
+    <div class="page-meta">{{ .ReadingTime }} min read</div>
+    {{ .Content }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
