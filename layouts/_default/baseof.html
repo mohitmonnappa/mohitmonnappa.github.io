@@ -19,8 +19,22 @@
 </head>
 <body>
   {{ partial "header.html" . }}
-  {{ block "main" . }}{{ end }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
   {{ partial "footer.html" . }}
   <script src="{{ "/js/theme.js" | relURL }}"></script>
+  <script>
+    (function() {
+      function syncIcon() {
+        var t = document.documentElement.getAttribute('data-theme');
+        document.querySelectorAll('.sun').forEach(function(el){ el.style.display = t==='dark'?'none':''; });
+        document.querySelectorAll('.moon').forEach(function(el){ el.style.display = t==='dark'?'':'none'; });
+      }
+      syncIcon();
+      var _o = window.toggleTheme;
+      window.toggleTheme = function(){ if(_o) _o(); syncIcon(); };
+    })();
+  </script>
 </body>
 </html>

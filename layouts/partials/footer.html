@@ -1,11 +1,10 @@
 <footer>
   <div class="wrap">
-    <div>© {{ now.Year }} Mohit Monnappa T N — writeups are for learning on legal targets only</div>
-    <div>
+    <span>© {{ now.Year }} Mohit Monnappa T N</span>
+    <span>
       <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
       · <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
       · <a href="{{ "/index.xml" | relURL }}">RSS</a>
-      · <a href="{{ "/about/" | relURL }}">About</a>
-    </div>
+    </span>
   </div>
 </footer>
