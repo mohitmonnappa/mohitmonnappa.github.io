@@ -31,3 +31,10 @@ Motivated Information Science student seeking cybersecurity and penetration test
 - **Email:** [monnappamohit@gmail.com](mailto:monnappamohit@gmail.com)
 - **GitHub:** [@mohitmonnappa](https://github.com/mohitmonnappa)
 - **LinkedIn:** [Mohit Monnappa T N](https://linkedin.com/in/mohit-monnappa)
+
+<script>
+document.querySelectorAll('.post-content a').forEach(a => {
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+});
+</script>
