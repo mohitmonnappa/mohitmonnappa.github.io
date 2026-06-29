@@ -24,9 +24,9 @@ theme = "PaperMod"
   category = "categories"
 
 [[menu.main]]
-  identifier = "writeups"
-  name = "Writeups"
-  url = "/writeups/"
+  identifier = "posts"
+  name = "Posts"
+  url = "/posts/"
   weight = 10
 
 [[menu.main]]
@@ -65,7 +65,7 @@ theme = "PaperMod"
   ShowRssButtonInSectionTermList = false
   ShowToc = true
   TocOpen = false
-  mainSections = ["writeups"]
+  mainSections = ["posts"]
 
   [params.profileMode]
     enabled = true
@@ -73,8 +73,8 @@ theme = "PaperMod"
     subtitle = "Cybersecurity enthusiast · CTF player · ISE student at BMSIT&M, Bangalore"
 
     [[params.profileMode.buttons]]
-      name = "Writeups"
-      url = "/writeups/"
+      name = "Posts"
+      url = "/posts/"
 
     [[params.profileMode.buttons]]
       name = "Projects"
