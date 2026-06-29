@@ -3,17 +3,19 @@
   <div class="home-intro">
     <h2>Hello, I'm Mohit 👋</h2>
     <p>
-      I'm a cybersecurity enthusiast based in Bangalore, India.
-      I enjoy competing in CTF (Capture the Flag) competitions and breaking things — legally.
-      This site is where I document my writeups, techniques, and notes from challenges I've solved.
+      I'm a cybersecurity enthusiast and Information Science student at BMSIT&M, Bangalore.
+      I compete in CTF competitions, build security and AI tooling, and document what I learn here.
     </p>
     <p>
-      My interests include web exploitation, binary exploitation, cryptography, and network security.
-      I'm currently learning more about [<em>your focus area — update this</em>].
+      My focus areas include web exploitation, network security, and vulnerability assessment.
+      I'm currently deepening my skills in binary exploitation and offensive security tooling.
     </p>
     <p>
-      If you're here to learn, feel free to dig through the writeups.
-      If something helped you, consider reaching out on <a href="{{ .Site.Params.github }}" style="color:var(--accent)" target="_blank" rel="noopener">GitHub</a>.
+      If you're here to learn, dig through the writeups.
+      If something helped you, reach out on
+      <a href="{{ .Site.Params.github }}" style="color:var(--accent)" target="_blank" rel="noopener">GitHub</a>
+      or
+      <a href="{{ .Site.Params.linkedin }}" style="color:var(--accent)" target="_blank" rel="noopener">LinkedIn</a>.
     </p>
   </div>
 
@@ -38,6 +40,29 @@
     <a class="view-all" href="{{ "/writeups/" | relURL }}">View all writeups →</a>
     {{ else }}
     <p style="color:var(--ink-soft); padding: 32px 0;">No writeups yet — check back soon.</p>
+    {{ end }}
+  </div>
+
+  <div class="home-projects">
+    <h2>Featured projects</h2>
+    {{ $projects := where .Site.RegularPages "Section" "projects" }}
+    {{ $projects = $projects.ByDate.Reverse }}
+    {{ if $projects }}
+    <div class="projects-grid home-pgrid">
+      {{ range first 2 $projects }}
+      <a class="project-card" href="{{ .Permalink }}">
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.subtitle }}<div class="project-subtitle-card">{{ . }}</div>{{ end }}
+        {{ with .Params.tech }}
+        <div class="project-tech">
+          {{ range . }}<span>{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+        {{ with .Summary }}<p>{{ . | plainify | truncate 130 }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+    <a class="view-all" href="{{ "/projects/" | relURL }}">View all projects →</a>
     {{ end }}
   </div>
 </div>

@@ -1,6 +1,6 @@
 baseURL = "https://mohitmonnappa.github.io/"
 locale = "en-us"
-title = "Mohit's Writeups"
+title = "Mohit Monnappa"
 paginate = 10
 
 [markup]
@@ -23,6 +23,7 @@ paginate = 10
   category = "categories"
 
 [params]
-  description = "CTF · web · pwn · crypto notes"
+  description = "CTFs · Projects · Notes"
   github = "https://github.com/mohitmonnappa"
+  linkedin = "https://linkedin.com/in/mohit-monnappa"
   author = "Mohit Monnappa T N"

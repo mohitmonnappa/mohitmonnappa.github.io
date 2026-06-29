@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="project-single">
+    <div class="crumb">
+      <a href="{{ "/projects/" | relURL }}">projects</a> / {{ .Slug }}
+    </div>
+
+    {{ with .Params.tech }}
+    <div class="project-tech" style="margin-top: 20px;">
+      {{ range . }}<span>{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="project-lead">{{ . }}</p>{{ end }}
+
+    <div class="prose" style="padding-top: 10px;">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.github }}
+    <a class="project-gh-link" href="{{ . }}" target="_blank" rel="noopener">View on GitHub →</a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

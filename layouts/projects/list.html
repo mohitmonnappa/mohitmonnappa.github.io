@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="page-header">
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Site.Params.author | default "Mohit" }}'s projects — security tools, AI systems, and other builds.</p>
+  </div>
+
+  <div class="projects-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <a class="project-card" href="{{ .Permalink }}">
+      <h3>{{ .Title }}</h3>
+      {{ with .Params.subtitle }}<div class="project-subtitle-card">{{ . }}</div>{{ end }}
+      {{ with .Params.tech }}
+      <div class="project-tech">
+        {{ range . }}<span>{{ . }}</span>{{ end }}
+      </div>
+      {{ end }}
+      {{ with .Summary }}<p>{{ . | plainify | truncate 160 }}</p>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
