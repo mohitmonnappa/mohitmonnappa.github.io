@@ -1,0 +1,754 @@
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
+:root,
+[data-theme="dark"] {
+  --bg: #0F141A;
+  --surface: #161D25;
+  --surface-2: #1B232C;
+  --ink: #E8ECF1;
+  --ink-soft: #AAB4C0;
+  --muted: #6E7884;
+  --line: #242E38;
+  --accent: #41C7B0;
+  --accent-2: #5FE0C9;
+  --accent-soft: rgba(65, 199, 176, .12);
+  --flag: #7FE3A0;
+  --flag-soft: rgba(127, 227, 160, .10);
+  --warn: #E8B05B;
+  --warn-soft: rgba(232, 176, 91, .10);
+  --code-bg: #0B0F14;
+  --code-ink: #D6DEE7;
+  --code-gutter: #4A5562;
+  --code-line: #1D2730;
+  --radius: 12px;
+  --maxw: 760px;
+}
+
+[data-theme="light"] {
+  --bg: #F7F8FB;
+  --surface: #FFFFFF;
+  --surface-2: #F0F2F7;
+  --ink: #181C28;
+  --ink-soft: #4A5167;
+  --muted: #8A92A6;
+  --line: #E6E9F0;
+  --accent: #41C7B0;
+  --accent-2: #2CA892;
+  --accent-soft: #E0F8F4;
+  --flag: #1E8E5A;
+  --flag-soft: #E6F4EC;
+  --warn: #C2680C;
+  --warn-soft: #FBF0E2;
+  --code-bg: #1B1E2B;
+  --code-ink: #E7E9F2;
+  --code-gutter: #5A6178;
+  --code-line: #2A2E3F;
+  --radius: 12px;
+  --maxw: 760px;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16.5px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ============================================================
+   Topbar
+   ============================================================ */
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: rgba(15, 20, 26, .85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+[data-theme="light"] .topbar {
+  background: rgba(247, 248, 251, .88);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 24px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Logo
+   ============================================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -.01em;
+}
+.logo .mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--accent);
+  color: #06120F;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.logo small {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+.topnav {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.topnav a {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 7px 13px;
+  border-radius: 8px;
+  transition: color .15s, background .15s;
+}
+.topnav a:hover,
+.topnav a:focus-visible {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ============================================================
+   Theme Toggle Button
+   ============================================================ */
+.theme-btn {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 10px;
+  line-height: 1;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.theme-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ============================================================
+   Article / Post Header
+   ============================================================ */
+article { padding: 36px 0 8px; }
+
+.crumb {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.crumb a:hover { color: var(--accent); }
+
+.badges { display: flex; gap: 8px; margin: 18px 0 0; flex-wrap: wrap; }
+.pill {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 100px;
+  font-family: 'Sora', sans-serif;
+}
+.pill.cat { background: var(--accent-soft); color: var(--accent); }
+.pill.diff { background: var(--flag-soft); color: var(--flag); }
+
+h1 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 5.2vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  margin: 14px 0 0;
+}
+
+.post-meta {
+  display: flex;
+  gap: 18px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+.post-meta span { display: flex; align-items: center; gap: 6px; }
+
+/* ============================================================
+   Sequential (Prev / Next) Nav
+   ============================================================ */
+.seqnav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+}
+.seqnav a { color: var(--ink-soft); display: flex; flex-direction: column; }
+.seqnav a small {
+  color: var(--muted);
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.seqnav a:hover { color: var(--accent); }
+.seqnav .next { text-align: right; }
+
+/* ============================================================
+   Table of Contents
+   ============================================================ */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin: 26px 0 6px;
+}
+.toc b {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+}
+.toc nav { margin: 10px 0 0; }
+.toc ol {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}
+.toc li { margin: 4px 0; }
+.toc a:hover { color: var(--accent); }
+
+/* ============================================================
+   Prose Body
+   ============================================================ */
+.prose { padding: 8px 0 0; }
+
+.prose h2 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -.01em;
+  margin: 38px 0 10px;
+}
+.prose h2::before {
+  content: '#';
+  color: var(--accent);
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.prose p { color: var(--ink-soft); margin: 0 0 16px; }
+.prose strong { color: var(--ink); }
+.prose em { font-style: italic; }
+
+.prose p code,
+.prose li code,
+.prose td code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+  background: var(--accent-soft);
+  color: var(--accent-2);
+  padding: 1.5px 6px;
+  border-radius: 5px;
+}
+
+.prose ul,
+.prose ol {
+  color: var(--ink-soft);
+  padding-left: 20px;
+  margin: 0 0 16px;
+}
+.prose li { margin: 4px 0; }
+
+/* ============================================================
+   Code Blocks (custom render hook output)
+   ============================================================ */
+.code {
+  margin: 18px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.code-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #10161C;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.code-head .d {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2A3640;
+  flex-shrink: 0;
+}
+.code-head .fname {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+.code-head .lang {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.code-body {
+  display: flex;
+  background: var(--code-bg);
+  overflow-x: auto;
+}
+.gutter {
+  flex: none;
+  padding: 14px 12px 14px 16px;
+  text-align: right;
+  color: var(--code-gutter);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  user-select: none;
+  -webkit-user-select: none;
+  border-right: 1px solid var(--code-line);
+  margin-right: 14px;
+  white-space: pre;
+}
+.src-wrap {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.src-wrap .highlight {
+  margin: 0;
+  background: transparent;
+}
+.src-wrap pre.chroma {
+  margin: 0;
+  padding: 14px 16px 14px 0;
+  background: transparent;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--code-ink);
+  white-space: pre;
+  overflow: visible;
+}
+.src-wrap code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* ============================================================
+   Chroma Syntax Highlighting
+   (code blocks always on dark background in both themes)
+   ============================================================ */
+.chroma .err { color: #f92672; }
+
+/* Keywords */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt  { color: #7FB4FF; }
+
+/* Strings */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss  { color: #7FE3A0; }
+
+/* Comments */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf { color: #5C6773; font-style: italic; }
+
+/* Numbers */
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo,
+.chroma .mx  { color: #E8B05B; }
+
+/* Functions */
+.chroma .nf,
+.chroma .fm  { color: #41C7B0; }
+
+/* Built-ins & name constants */
+.chroma .nb  { color: #7FB4FF; }
+.chroma .no  { color: #E8B05B; }
+
+/* Operators, punctuation, whitespace — inherit code-ink */
+.chroma .o,
+.chroma .ow,
+.chroma .p,
+.chroma .w   { color: var(--code-ink); }
+
+/* Name tags (HTML/XML) */
+.chroma .nt  { color: #7FB4FF; }
+
+/* ============================================================
+   Callout Boxes
+   ============================================================ */
+.note {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 13px 16px;
+  border-radius: 0 8px 8px 0;
+  margin: 18px 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.note b { color: var(--accent); }
+.note p { margin: 0; color: inherit; }
+
+.warn {
+  border-left: 3px solid var(--warn);
+  background: var(--warn-soft);
+  padding: 13px 16px;
+  border-radius: 0 8px 8px 0;
+  margin: 18px 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.warn b { color: var(--warn); }
+.warn p { margin: 0; color: inherit; }
+
+/* ============================================================
+   Flag Box
+   ============================================================ */
+.flagbox {
+  border: 1px dashed var(--flag);
+  background: var(--flag-soft);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 20px 0;
+}
+.flagbox small {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--flag);
+  font-weight: 600;
+}
+.flagbox .val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  color: var(--ink);
+  margin-top: 5px;
+  word-break: break-all;
+}
+
+/* ============================================================
+   Tags
+   ============================================================ */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 30px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.tag {
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 5px 12px;
+  border-radius: 100px;
+  transition: background .15s, color .15s;
+}
+.tag:hover {
+  background: var(--accent);
+  color: #06120F;
+}
+
+/* ============================================================
+   Related Writeups
+   ============================================================ */
+.related h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin: 34px 0 14px;
+}
+.rgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.rcard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  transition: border-color .15s, background .15s, transform .15s;
+  display: block;
+}
+.rcard:hover {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+.rcard .m {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.rcard h4 {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 6px 0 0;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+
+/* ============================================================
+   Homepage
+   ============================================================ */
+.home-intro {
+  padding: 52px 0 44px;
+  border-bottom: 1px solid var(--line);
+}
+.home-intro h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 18px;
+  color: var(--ink);
+}
+.home-intro p {
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+.home-intro p:last-child { margin-bottom: 0; }
+
+.home-posts { padding: 36px 0 0; }
+.home-posts > h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.post-item:first-child { border-top: 1px solid var(--line); }
+.post-item-top {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.post-item h3 {
+  font-family: 'Sora', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -.01em;
+}
+.post-item h3 a:hover { color: var(--accent); }
+.post-item .pi-meta {
+  font-size: 13px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  white-space: nowrap;
+}
+.post-item .pi-summary {
+  color: var(--ink-soft);
+  font-size: 15px;
+  margin: 0;
+}
+
+.view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 48px;
+}
+.view-all:hover { text-decoration: underline; }
+
+/* ============================================================
+   List Page (Writeups Index)
+   ============================================================ */
+.page-header {
+  padding: 40px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+.page-header h1 {
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+.page-header p {
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 15px;
+}
+.list-posts { padding: 20px 0 48px; }
+
+/* ============================================================
+   About / Generic Single Page
+   ============================================================ */
+.page-body {
+  padding: 40px 0 60px;
+}
+.page-body h1 {
+  margin: 0 0 6px;
+}
+.page-body .page-meta {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.page-body h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 32px 0 10px;
+  color: var(--ink);
+}
+.page-body p {
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+.page-body ul,
+.page-body ol {
+  color: var(--ink-soft);
+  padding-left: 20px;
+  margin: 0 0 14px;
+}
+.page-body li { margin: 4px 0; }
+.page-body a { color: var(--accent); }
+.page-body a:hover { text-decoration: underline; }
+.page-body strong { color: var(--ink); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  margin-top: 46px;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 24px 24px 40px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+footer a:hover { color: var(--accent); }
+
+/* ============================================================
+   Focus & Accessibility
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 560px) {
+  .rgrid { grid-template-columns: 1fr; }
+  .topnav a { padding: 6px 9px; font-size: 14px; }
+  .seqnav { flex-direction: column; gap: 8px; }
+  .seqnav .next { text-align: left; }
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    scroll-behavior: auto;
+  }
+}
