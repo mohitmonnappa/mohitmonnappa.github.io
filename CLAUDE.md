@@ -7,56 +7,74 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 hugo server        # local dev server at http://localhost:1313
 hugo server -D     # include draft posts
-hugo               # build to public/
 hugo --minify      # production build (what CI runs)
-hugo new writeups/<slug>.md  # scaffold a new writeup
 ```
 
-Deployment is automatic: push to `main` → GitHub Actions runs `hugo --minify` → deploys `public/` to GitHub Pages.
+Deployment is automatic: push to `main` → GitHub Actions runs `hugo --minify` → deploys `public/` to GitHub Pages. Do not edit `public/` manually.
 
 ## Architecture
 
-This is a **custom Hugo site with no theme** — all layouts, CSS, and JS are hand-written. There are no npm dependencies or build tools beyond Hugo itself.
+Hugo site using the **PaperMod theme** (git submodule at `themes/PaperMod/`). Requires Hugo ≥ 0.146.0 (site runs 0.163.3 extended). No npm, no build tools beyond Hugo.
 
-### Layouts
+### Theme override pattern
 
-- `layouts/_default/baseof.html` — HTML shell; loads fonts (Sora, Inter, JetBrains Mono), `main.css`, and an inline theme-init script that reads `localStorage` before paint to prevent flash
-- `layouts/index.html` — homepage: intro blurb + last 5 writeups from `content/writeups/`
-- `layouts/_default/single.html` — handles two cases via `{{ if eq .Section "writeups" }}`: full writeup layout (breadcrumb, badges, TOC, prev/next nav, flag box, tags, related) or a minimal generic page layout (About, etc.)
-- `layouts/_default/list.html` — writeups index page
-- `layouts/partials/header.html` / `footer.html` — site chrome
+PaperMod partials live in `themes/PaperMod/layouts/_partials/`. Project files in `layouts/` take precedence over the theme via Hugo's lookup order. The key overrides are:
 
-### Render hooks (Markdown extensions)
+- `layouts/_default/baseof.html` — adds the hero banner (shown on all pages except home and individual content pages), sets `has-hero` body class, controls `$showHero` logic
+- `layouts/index.html` — home page: renders `index_profile.html` partial + last 5 posts from `mainSections`
+- `layouts/posts/single.html` — custom single post template with category/difficulty badges, prev/next level nav (front matter driven), flag box, shuffled related posts
+- `layouts/posts/list.html` — uses `.RegularPagesRecursive` (not `.Pages`) so nested subsections appear in the listing
+- `layouts/projects/list.html` / `layouts/projects/single.html` — projects section templates
 
-- `layouts/_default/_markup/render-codeblock.html` — replaces standard fenced code blocks with a custom component: traffic-light dots, optional `filename` attribute, line-number gutter, Hugo Chroma highlighting. Usage: ` ```bash {filename="exploit.sh"} `
-- `layouts/_default/_markup/render-blockquote.html` — maps GitHub-style callouts to styled divs. `> [!note]` → `.note`, `> [!warning]` / `> [!caution]` → `.warn`, `> [!tip]` → `.note`
+### CSS
 
-### Static assets
+All custom styles live in **`assets/css/extended/custom.css`**. PaperMod automatically loads every file in `assets/css/extended/` after its own CSS. Do not create `static/css/` files — they won't integrate with PaperMod's variable system.
 
-- `static/css/main.css` — all styles; uses CSS custom properties for theming. Two palettes: `[data-theme="dark"]` (default, set on `<html>`) and `[data-theme="light"]`. Accent color is teal `#41C7B0` (`--accent`). Code blocks always use a dark background regardless of theme.
-- `static/js/theme.js` — toggles `data-theme` on `<html>` and persists to `localStorage`
+Dark mode uses `.dark` body class (PaperMod convention, not `[data-theme="dark"]`). CSS custom properties: `--accent` (teal), `--accent-soft`, `--primary`, `--secondary`, `--border`, `--entry` from PaperMod; `--main-width: 860px` set in custom.css.
 
-### Content
+### Content structure
 
-All writeups live in `content/writeups/`. Front matter fields:
-
-```yaml
-title: "Challenge Name — Short description"
-date: YYYY-MM-DD
-category: "Web Exploitation"   # drives breadcrumb & related writeups
-difficulty: "Easy"             # pill badge
-tags: ["web", "idor"]          # tag pages + pill links at bottom
-flag: "CTF{...}"               # rendered in a highlighted flag box
-prev:                          # optional sequential navigation
-  title: "Previous post title"
-  url: "/writeups/slug/"
-next:
-  title: "Next post title"
-  url: "/writeups/slug/"
+```
+content/
+  about.md                        # standalone page
+  posts/
+    _index.md                     # section title shown in hero banner
+    overthewire/
+      bandit/
+        bandit01.md … bandit33.md # individual level writeups
+        walkthrough.md            # index listing all levels
 ```
 
-New posts are created as drafts (`draft: true`); remove that field to publish.
+`mainSections = ["posts"]` in `hugo.toml` — only this section appears on the home page and in PaperMod's built-in nav links.
 
-### Deployment
+### Front matter for posts
 
-`.github/workflows/deploy.yml` uses `peaceiris/actions-hugo` + `peaceiris/actions-gh-pages`. The `public/` directory is the build output and is committed/deployed by CI — do not edit files there manually.
+```yaml
+title: "OverTheWire: Bandit — Level N"
+date: YYYY-MM-DD
+category: "Linux"          # drives related posts matching
+difficulty: "Easy"         # pill badge (optional)
+tags: ["ctf", "bandit"]    # tag taxonomy pages
+flag: "flag{...}"          # renders highlighted flag box (optional)
+prev:                      # sequential nav rendered above content
+  title: "Level N-1"
+  url: "/posts/overthewire/bandit/banditNN/"
+next:                      # sequential nav rendered below content
+  title: "Level N+1"
+  url: "/posts/overthewire/bandit/banditNN/"
+```
+
+Prev/next are front matter driven (not PaperMod's `post_nav_links.html`) so order is explicit, not date-based.
+
+### Render hooks
+
+- `layouts/_default/_markup/render-codeblock.html` — custom code block: traffic-light dots, optional `{filename="x"}` attribute, line-number gutter, Chroma highlighting
+- `layouts/_default/_markup/render-blockquote.html` — GitHub-style callouts: `> [!note]` → `.note`, `> [!warning]`/`> [!caution]` → `.warn`
+
+`markup.goldmark.renderer.unsafe = true` is set, so raw HTML in Markdown is rendered.
+
+### Security constraints
+
+- `resume.md` and `bandit_writeup.md` are gitignored — never commit them
+- `content/about.md` must only contain information from `resume.md` — no phone number, no Class XII education
+- Profile photo is at `static/images/` and referenced via `/images/...` in `hugo.toml` `profileMode.imageUrl`
