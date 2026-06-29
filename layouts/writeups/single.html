@@ -15,7 +15,7 @@
     </div>
     {{- end }}
     {{- with .Params.prev }}
-    <div class="level-nav level-nav-prev">← <a href="{{ .url }}">{{ .title }}</a></div>
+    <div class="level-nav level-nav-prev"><span class="level-nav-label">Previous Level:</span> <a href="{{ .url }}">{{ .title }}</a></div>
     {{- end }}
   </header>
   {{- if (.Param "ShowToc") }}
@@ -33,7 +33,7 @@
     {{- end }}
   </div>
   {{- with .Params.next }}
-  <div class="level-nav level-nav-next"><a href="{{ .url }}">{{ .title }}</a> →</div>
+  <div class="level-nav level-nav-next"><span class="level-nav-label">Next Level:</span> <a href="{{ .url }}">{{ .title }}</a></div>
   {{- end }}
   {{- with .Params.tags }}
   <div class="tags">

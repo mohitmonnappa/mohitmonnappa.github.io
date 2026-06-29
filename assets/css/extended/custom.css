@@ -293,21 +293,25 @@
    ============================================================ */
 .level-nav {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13.5px;
+  font-size: 14px;
+  text-align: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.level-nav-label {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--primary);
 }
 .level-nav a { color: var(--accent); }
 .level-nav a:hover { text-decoration: underline; }
 .level-nav-prev {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  border-top: 1px dashed var(--border);
 }
 .level-nav-next {
-  text-align: right;
-  margin-top: 28px;
-  padding: 14px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  margin-top: 32px;
+  border-top: 1px dashed var(--border);
 }
 
 /* ============================================================
