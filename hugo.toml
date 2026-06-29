@@ -71,6 +71,10 @@ theme = "PaperMod"
     enabled = true
     title = "Mohit Monnappa"
     subtitle = "Cybersecurity enthusiast · CTF player · ISE student at BMSIT&M, Bangalore"
+    imageUrl = "images/avatar.jpg"
+    imageWidth = 150
+    imageHeight = 150
+    imageTitle = "Mohit Monnappa"
 
     [[params.profileMode.buttons]]
       name = "Posts"

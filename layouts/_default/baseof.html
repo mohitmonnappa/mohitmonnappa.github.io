@@ -16,17 +16,17 @@
     {{- partial "head.html" . }}
 </head>
 
-{{- $showHero := not (and (eq .Kind "page") (ne .Section "")) }}
+{{- $showHero := and (not .IsHome) (not (and (eq .Kind "page") (ne .Section ""))) }}
 {{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`)) }}
-<body class="list{{ if and $showHero (not .IsHome) }} has-hero{{ end }}" id="top">
+<body class="list{{ if $showHero }} has-hero{{ end }}" id="top">
 {{- else }}
-<body{{ if and $showHero (not .IsHome) }} class="has-hero"{{ end }} id="top">
+<body{{ if $showHero }} class="has-hero"{{ end }} id="top">
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
     {{- if $showHero }}
     <div class="hero-banner">
       <div class="hero-inner">
-        <span class="hero-title">{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}</span>
+        <span class="hero-title">{{ .Title }}</span>
       </div>
     </div>
     {{- end }}

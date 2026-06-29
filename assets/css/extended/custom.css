@@ -17,6 +17,15 @@
   background: linear-gradient(to right, rgba(0, 0, 0, .70) 0%, rgba(0, 0, 0, .20) 65%, transparent 100%);
 }
 
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
 .hero-inner {
   position: relative;
   max-width: var(--nav-width, 1380px);
@@ -323,6 +332,45 @@ body.has-hero header.page-header { display: none; }
 body.has-hero div.page-header h1 { display: none; }
 /* About (single page): hide the post-title h1 */
 body.has-hero .post-title { display: none; }
+
+/* ============================================================
+   Profile — avatar + buttons
+   ============================================================ */
+.profile img {
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+
+.button {
+  border: 2px solid var(--accent) !important;
+  color: var(--accent) !important;
+  background: transparent !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  transition: background .15s, color .15s !important;
+}
+.button:hover {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+/* ============================================================
+   Home page — recent posts
+   ============================================================ */
+.home-recent {
+  margin-top: 48px;
+}
+.home-recent-hd {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--secondary);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin: 0 0 4px;
+}
 
 /* ============================================================
    Header / Nav overrides
