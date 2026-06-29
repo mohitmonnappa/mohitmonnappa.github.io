@@ -289,6 +289,28 @@
 .project-gh-link:hover { text-decoration: underline; }
 
 /* ============================================================
+   Level navigation (prev at top, next at bottom)
+   ============================================================ */
+.level-nav {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+}
+.level-nav a { color: var(--accent); }
+.level-nav a:hover { text-decoration: underline; }
+.level-nav-prev {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.level-nav-next {
+  text-align: right;
+  margin-top: 28px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ============================================================
    Suppress duplicate page title/breadcrumb on hero pages
    ============================================================ */
 /* List pages (writeups, tags): hide the whole page-header (title + Home breadcrumb) */
