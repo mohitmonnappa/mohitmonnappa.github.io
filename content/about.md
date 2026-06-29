@@ -2,28 +2,21 @@
 title: "About"
 ---
 
-## Hello
+Motivated Information Science student seeking cybersecurity and penetration testing internships. Hands-on experience with network analysis, web security tools, Python automation, and lab-based offensive security projects. Strong foundation in identifying vulnerabilities, documenting findings, and learning quickly in practical security environments.
 
-I'm Mohit Monnappa T N — an Information Science and Engineering student at BMSIT&M, Bangalore (CGPA: 8.55, graduating 2026). I'm focused on cybersecurity and penetration testing, and I spend most of my time competing in CTFs, building security tooling, and breaking things legally.
+## Education
 
-## Background
+**B.E. in Information Science and Engineering | BMSIT&M** — CGPA: 8.55 | Nov 2022 – Present
 
-I hold a Class XII (CBSE) from Kensri School with 92.20%. My interest in security grew alongside my programming work — I've built tools ranging from LLM input firewalls to AI routing gateways, but offensive security is where I spend the most time.
-
-## What I focus on
-
-- **Web exploitation** — IDOR, SQLi, XSS, auth bypasses, JWT flaws
-- **Network security** — packet analysis, traffic interception, wireless auditing
-- **Vulnerability assessment** — manual and tool-assisted recon and enumeration
-- **Binary exploitation** — buffer overflows, ROP chains *(actively learning)*
+**Class XII (CBSE) | Kensri School** — Grade: 92.20% | 2022
 
 ## Skills
 
 **Languages:** Python, C, Java, Bash
 
-**Security tools:** Burp Suite, Wireshark, Metasploit, Aircrack-ng, BeEF, Maltego, Hashcat
+**Security Tools:** Aircrack-ng, Wireshark, Burp Suite, Metasploit, BeEF, Maltego, Hashcat
 
-**Platforms:** TryHackMe, HackTheBox, CTFtime
+**Security Concepts:** Network Security, Web Application Security Testing, Vulnerability Assessment, Linux Administration, Windows Administration
 
 ## Certifications
 
@@ -33,8 +26,8 @@ I hold a Class XII (CBSE) from Kensri School with 92.20%. My interest in securit
 - **TryHackMe — Cyber Security 101 Path** · [Certificate](https://drive.google.com/file/d/1PDABMSIF_KRi2J8roKnJRx-7cD1X_7wj/view)
 - **TryHackMe — Complete Beginner Path** · [Certificate](https://drive.google.com/file/d/18qzxl9alXZB3vsqL0DVd3kMVFuT15NNJ/view)
 
-## Find me
+## Contact
 
-- GitHub: [mohitmonnappa](https://github.com/mohitmonnappa)
-- LinkedIn: [Mohit Monnappa T N](https://linkedin.com/in/mohit-monnappa)
-- Email: [monnappamohit@gmail.com](mailto:monnappamohit@gmail.com)
+- **Email:** [monnappamohit@gmail.com](mailto:monnappamohit@gmail.com) · (+91) 9008551551
+- **GitHub:** [@mohitmonnappa](https://github.com/mohitmonnappa)
+- **LinkedIn:** [Mohit Monnappa T N](https://linkedin.com/in/mohit-monnappa)
