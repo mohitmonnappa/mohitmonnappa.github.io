@@ -1,3 +1,3 @@
 ---
-title: "Writeups"
+title: "Posts"
 ---
