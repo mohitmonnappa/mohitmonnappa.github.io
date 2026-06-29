@@ -8,8 +8,6 @@ Motivated Information Science student seeking cybersecurity and penetration test
 
 **B.E. in Information Science and Engineering | BMSIT&M** — CGPA: 8.55 | Nov 2022 – Present
 
-**Class XII (CBSE) | Kensri School** — Grade: 92.20% | 2022
-
 ## Skills
 
 **Languages:** Python, C, Java, Bash
@@ -28,6 +26,6 @@ Motivated Information Science student seeking cybersecurity and penetration test
 
 ## Contact
 
-- **Email:** [monnappamohit@gmail.com](mailto:monnappamohit@gmail.com) · (+91) 9008551551
+- **Email:** [monnappamohit@gmail.com](mailto:monnappamohit@gmail.com)
 - **GitHub:** [@mohitmonnappa](https://github.com/mohitmonnappa)
 - **LinkedIn:** [Mohit Monnappa T N](https://linkedin.com/in/mohit-monnappa)
