@@ -1,5 +1,7 @@
 ---
 title: "About"
+ShowBreadCrumbs: false
+ShowToc: false
 ---
 
 Motivated Information Science student seeking cybersecurity and penetration testing internships. Hands-on experience with network analysis, web security tools, Python automation, and lab-based offensive security projects. Strong foundation in identifying vulnerabilities, documenting findings, and learning quickly in practical security environments.

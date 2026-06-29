@@ -280,6 +280,19 @@
 .project-gh-link:hover { text-decoration: underline; }
 
 /* ============================================================
+   Header / Nav overrides
+   ============================================================ */
+.header {
+  padding-top: 12px;
+}
+
+.logo a {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+/* ============================================================
    Accent color for PaperMod elements
    ============================================================ */
 .post-tags li a:hover,

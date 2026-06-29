@@ -22,7 +22,7 @@
 <body id="top">
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
-    {{- if .IsHome }}
+    {{- if not (and (eq .Kind "page") (ne .Section "")) }}
     <div class="hero-banner">
       <div class="hero-inner">
         <h2>{{ site.Title }}</h2>

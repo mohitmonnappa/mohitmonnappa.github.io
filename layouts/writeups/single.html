@@ -1,7 +1,6 @@
 {{- define "main" }}
 <article class="post-single">
   <header class="post-header">
-    {{ partial "breadcrumbs.html" . }}
     {{- if or .Params.category .Params.difficulty }}
     <div class="writeup-badges">
       {{- with .Params.category }}<span class="badge badge-cat">{{ . }}</span>{{ end -}}
