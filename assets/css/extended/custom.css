@@ -25,9 +25,10 @@
   padding: 28px 40px;
 }
 
-.hero-inner h2 {
+.hero-title {
+  display: block;
   color: #fff;
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: 52px;
   font-weight: 800;
   margin: 0;
   line-height: 1.1;
@@ -38,6 +39,7 @@
 @media (max-width: 640px) {
   .hero-banner { min-height: 160px; }
   .hero-inner { padding: 20px 24px; }
+  .hero-title { font-size: 32px; }
 }
 
 /* ============================================================
