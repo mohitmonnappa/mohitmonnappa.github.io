@@ -282,6 +282,16 @@
 .project-gh-link:hover { text-decoration: underline; }
 
 /* ============================================================
+   Suppress duplicate page title/breadcrumb on hero pages
+   ============================================================ */
+/* List pages (writeups, tags): hide the whole page-header (title + Home breadcrumb) */
+body.has-hero header.page-header { display: none; }
+/* Projects list: hide only the h1 inside my custom .page-header div, keep description */
+body.has-hero div.page-header h1 { display: none; }
+/* About (single page): hide the post-title h1 */
+body.has-hero .post-title { display: none; }
+
+/* ============================================================
    Header / Nav overrides
    ============================================================ */
 .header {
