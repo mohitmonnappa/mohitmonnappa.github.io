@@ -519,16 +519,31 @@ h1 {
   border-top: 1px solid var(--line);
 }
 .tag {
-  font-size: 12.5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
   color: var(--accent);
-  background: var(--accent-soft);
-  padding: 5px 12px;
-  border-radius: 100px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  padding: 4px 11px;
+  border-radius: 5px;
   transition: background .15s, color .15s;
 }
 .tag:hover {
   background: var(--accent);
   color: #06120F;
+}
+
+/* Tags listing page */
+.terms-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 32px 0 60px;
+}
+.tag-count {
+  font-size: 10px;
+  opacity: 0.55;
+  margin-left: 6px;
 }
 
 /* ============================================================
