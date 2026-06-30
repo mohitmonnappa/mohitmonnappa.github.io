@@ -7,7 +7,7 @@ date: 2025-03-01
 summary: "AI gateway that dynamically routes prompts to fast or capable LLMs based on task complexity, cutting cost by 25%+ and achieving 15%+ cache hit rates."
 ---
 
-RouteWise sits in front of your LLM calls and decides — per prompt — whether to use a fast, cheap model or a slower, capable one.
+RouteWise sits in front of your LLM calls and decides - per prompt - whether to use a fast, cheap model or a slower, capable one.
 
 ## How it works
 

@@ -1,7 +1,7 @@
 ---
 ShowToc: false
 hiddenInList: true
-title: "OverTheWire: Bandit — Level 6"
+title: "OverTheWire: Bandit - Level 6"
 date: 2024-01-06
 category: "Linux"
 tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]

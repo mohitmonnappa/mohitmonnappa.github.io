@@ -1,7 +1,7 @@
 ---
 ShowToc: false
 hiddenInList: true
-title: "OverTheWire: Bandit — Level 25 & 26"
+title: "OverTheWire: Bandit - Level 25 & 26"
 date: 2024-01-25
 category: "Linux"
 tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]
@@ -51,7 +51,7 @@ Now print the password of bandit26:
 cat /etc/bandit_pass/bandit26
 ```
 
-We also see a setuid binary — use it to get the password of bandit27:
+We also see a setuid binary - use it to get the password of bandit27:
 
 ```bash
 cat /etc/bandit_pass/bandit27

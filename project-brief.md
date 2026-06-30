@@ -1,4 +1,4 @@
-# Personal Cybersecurity Writeup Blog — Project Brief
+# Personal Cybersecurity Writeup Blog - Project Brief
 
 ## Overview
 
@@ -15,7 +15,7 @@ but with a fresh design, and a light/dark mode toggle.
 | Static site generator | Hugo |
 | Hosting | GitHub Pages |
 | Deployment | GitHub Actions (auto-deploy on push to `main`) |
-| DNS / Domain | Custom domain — registrar TBD (Namecheap / Cloudflare / Porkbun) |
+| DNS / Domain | Custom domain - registrar TBD (Namecheap / Cloudflare / Porkbun) |
 | Writing | Markdown `.md` files |
 
 ---
@@ -24,10 +24,10 @@ but with a fresh design, and a light/dark mode toggle.
 
 Before starting, confirm these two things with Naren:
 
-1. **Accent colour** — indigo `#5145CD` or teal `#41C7B0`? (used in both light and dark mode)
-2. **Display / heading font** — `Space Grotesk` or `Sora`?
-3. **GitHub username** — needed for Pages and Actions config
-4. **Domain name** — already purchased, or still to buy?
+1. **Accent colour** - indigo `#5145CD` or teal `#41C7B0`? (used in both light and dark mode)
+2. **Display / heading font** - `Space Grotesk` or `Sora`?
+3. **GitHub username** - needed for Pages and Actions config
+4. **Domain name** - already purchased, or still to buy?
 
 ---
 
@@ -36,7 +36,7 @@ Before starting, confirm these two things with Naren:
 ### Theme
 
 Clean, structured writeup blog. Readable and professional.
-Not dark/terminal/hacker aesthetic — no neon-on-black, no glitch effects.
+Not dark/terminal/hacker aesthetic - no neon-on-black, no glitch effects.
 
 ### Light / Dark Mode
 
@@ -51,7 +51,7 @@ Not dark/terminal/hacker aesthetic — no neon-on-black, no glitch effects.
 |-------|-----------|-----------|
 | `--bg` | `#F7F8FB` | `#0F141A` |
 | `--surface` | `#FFFFFF` | `#161D25` |
-| `--surface-2` | — | `#1B232C` |
+| `--surface-2` | - | `#1B232C` |
 | `--ink` | `#181C28` | `#E8ECF1` |
 | `--ink-soft` | `#4A5167` | `#AAB4C0` |
 | `--muted` | `#8A92A6` | `#6E7884` |
@@ -76,8 +76,8 @@ Load all three from Google Fonts.
 
 Two fully designed reference pages are provided alongside this brief:
 
-- `writeup-A-light-indigo.html` — light skin with indigo accent
-- `writeup-B-dark-teal.html` — dark skin with teal accent
+- `writeup-A-light-indigo.html` - light skin with indigo accent
+- `writeup-B-dark-teal.html` - dark skin with teal accent
 
 Use these as the visual and structural reference for the Hugo theme.
 Pixel-match the layout, spacing, components, and code block styling from these files.
@@ -87,7 +87,7 @@ Pixel-match the layout, spacing, components, and code block styling from these f
 ## Site Structure
 
 ```
-/                        Homepage — intro + latest writeups
+/                        Homepage - intro + latest writeups
 /writeups/               All writeups index (filterable by tag/category)
 /writeups/[slug]/        Individual writeup post
 /tags/                   Tag index
@@ -110,7 +110,7 @@ Pixel-match the layout, spacing, components, and code block styling from these f
 │   └── about.md
 ├── layouts/
 │   ├── _default/
-│   │   ├── baseof.html          # Base template — header, footer, theme toggle
+│   │   ├── baseof.html          # Base template - header, footer, theme toggle
 │   │   ├── list.html            # Writeups index
 │   │   └── single.html         # Individual writeup post
 │   ├── index.html               # Homepage
@@ -125,29 +125,29 @@ Pixel-match the layout, spacing, components, and code block styling from these f
 │       └── theme.js
 └── .github/
     └── workflows/
-        └── deploy.yml           # GitHub Actions — build and deploy to gh-pages
+        └── deploy.yml           # GitHub Actions - build and deploy to gh-pages
 ```
 
 ---
 
-## Individual Writeup Post — Page Structure
+## Individual Writeup Post - Page Structure
 
 Every writeup page must include these sections in this order:
 
-1. **Breadcrumb** — `writeups / [category] / [slug]`
-2. **Category + difficulty badges** — e.g. `Web Exploitation · Easy`
-3. **Title** — `h1`, display font
-4. **Post meta row** — published date · read time · flag captured ✓
-5. **Prev / Next strip** — links to adjacent challenges
-6. **Table of contents** — "On this page", generated from `##` headings
-7. **Prose body** — sections with `##` headings, hash prefix styled in accent colour
-8. **Line-numbered syntax-highlighted code blocks** — with filename + language label in header
-9. **Callout boxes** — two variants:
-   - `> [!note]` — accent colour left border
-   - `> [!warning]` — amber left border
-10. **Flag box** — dashed border, monospace flag value, "FLAG" label
-11. **Tags strip** — pill tags linking to `/tags/[tag]/`
-12. **Related writeups** — 2-column card grid, pulled from same category or shared tags
+1. **Breadcrumb** - `writeups / [category] / [slug]`
+2. **Category + difficulty badges** - e.g. `Web Exploitation · Easy`
+3. **Title** - `h1`, display font
+4. **Post meta row** - published date · read time · flag captured ✓
+5. **Prev / Next strip** - links to adjacent challenges
+6. **Table of contents** - "On this page", generated from `##` headings
+7. **Prose body** - sections with `##` headings, hash prefix styled in accent colour
+8. **Line-numbered syntax-highlighted code blocks** - with filename + language label in header
+9. **Callout boxes** - two variants:
+   - `> [!note]` - accent colour left border
+   - `> [!warning]` - amber left border
+10. **Flag box** - dashed border, monospace flag value, "FLAG" label
+11. **Tags strip** - pill tags linking to `/tags/[tag]/`
+12. **Related writeups** - 2-column card grid, pulled from same category or shared tags
 
 ---
 
@@ -157,17 +157,17 @@ Every writeup `.md` file uses this frontmatter:
 
 ```yaml
 ---
-title: "HappyVault — Reading other people's notes (IDOR)"
+title: "HappyVault - Reading other people's notes (IDOR)"
 date: 2026-06-22
 category: "Web Exploitation"
 difficulty: "Easy"
 tags: ["web", "idor", "access-control", "beginner"]
 flag: "CTF{idor_is_an_access_control_bug}"
 prev:
-  title: "SimpleLogin — Auth bypass"
+  title: "SimpleLogin - Auth bypass"
   url: "/writeups/simplelogin-auth-bypass/"
 next:
-  title: "TokenForge — JWT none-alg"
+  title: "TokenForge - JWT none-alg"
   url: "/writeups/tokenforge-jwt/"
 ---
 ```
@@ -179,13 +179,13 @@ next:
 Create `static/js/theme.js`:
 
 ```javascript
-// On page load — respect OS preference, then saved preference
+// On page load - respect OS preference, then saved preference
 const saved = localStorage.getItem('theme');
 const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches
   ? 'dark' : 'light';
 document.documentElement.setAttribute('data-theme', saved || preferred);
 
-// Toggle function — called by the button in the header
+// Toggle function - called by the button in the header
 function toggleTheme() {
   const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'dark' ? 'light' : 'dark';
@@ -195,7 +195,7 @@ function toggleTheme() {
 ```
 
 The toggle button should show a sun icon in dark mode and a moon icon in light mode.
-No page reload — the swap is instant via the CSS variable system.
+No page reload - the swap is instant via the CSS variable system.
 
 ---
 
@@ -278,17 +278,17 @@ to validate the template. Use this content:
 
 ```markdown
 ---
-title: "HappyVault — Reading other people's notes (IDOR)"
+title: "HappyVault - Reading other people's notes (IDOR)"
 date: 2026-06-22
 category: "Web Exploitation"
 difficulty: "Easy"
 tags: ["web", "idor", "access-control", "beginner"]
 flag: "CTF{idor_is_an_access_control_bug}"
 prev:
-  title: "SimpleLogin — Auth bypass"
+  title: "SimpleLogin - Auth bypass"
   url: "/writeups/simplelogin-auth-bypass/"
 next:
-  title: "TokenForge — JWT none-alg"
+  title: "TokenForge - JWT none-alg"
   url: "/writeups/tokenforge-jwt/"
 ---
 
@@ -311,7 +311,7 @@ $ curl -s -b "session=eyJ1aWQiOj4..." \
 {"id":4081,"owner":"naren","body":"grocery list"}
 \```
 
-The server returns the note based on id alone — no ownership check.
+The server returns the note based on id alone - no ownership check.
 
 > [!note]
 > Whenever an app fetches a resource by an id you control,
@@ -319,7 +319,7 @@ The server returns the note based on id alone — no ownership check.
 
 ## Why this works
 
-This is a textbook **IDOR** — Insecure Direct Object Reference.
+This is a textbook **IDOR** - Insecure Direct Object Reference.
 The app exposes an internal identifier directly to the user and
 forgets the authorization step.
 
@@ -352,12 +352,12 @@ Work in this order:
 
 1. Scaffold Hugo project (`hugo new site`)
 2. Set up `config.toml` with site title, baseURL placeholder, Chroma config
-3. Build `main.css` — CSS variables, light/dark tokens, all component styles
-4. Build `theme.js` — toggle logic
-5. Build `baseof.html` — base layout with header, nav, theme toggle, footer
-6. Build `single.html` — individual writeup post template (most complex)
-7. Build `list.html` — writeups index
-8. Build `index.html` — homepage
+3. Build `main.css` - CSS variables, light/dark tokens, all component styles
+4. Build `theme.js` - toggle logic
+5. Build `baseof.html` - base layout with header, nav, theme toggle, footer
+6. Build `single.html` - individual writeup post template (most complex)
+7. Build `list.html` - writeups index
+8. Build `index.html` - homepage
 9. Create the example writeup `happyvault-idor.md` and verify it renders correctly
 10. Create `about.md` with placeholder content
 11. Set up `.github/workflows/deploy.yml`

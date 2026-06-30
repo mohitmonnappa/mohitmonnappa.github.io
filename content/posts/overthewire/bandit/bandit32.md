@@ -1,7 +1,7 @@
 ---
 ShowToc: false
 hiddenInList: true
-title: "OverTheWire: Bandit — Level 32"
+title: "OverTheWire: Bandit - Level 32"
 date: 2024-01-31
 category: "Linux"
 tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]
@@ -38,7 +38,7 @@ In Linux, using `printenv` will give all the environment variables. Some common 
 | `SHELL` / `$0` | The path of the current user's shell **(most important!)** |
 | `USER`   | Currently logged-in user |
 
-Any command is converted to uppercase and executed, and there are no uppercase commands in Linux. Therefore, we need a way to start a normal terminal. `$0` is the shell path — run it:
+Any command is converted to uppercase and executed, and there are no uppercase commands in Linux. Therefore, we need a way to start a normal terminal. `$0` is the shell path - run it:
 
 ```bash
 $0

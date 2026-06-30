@@ -64,7 +64,7 @@
 }
 
 /* ============================================================
-   Custom Variables — light (PaperMod default)
+   Custom Variables - light (PaperMod default)
    ============================================================ */
 :root {
   --accent: #0b9488;
@@ -255,7 +255,7 @@
 .rcard h4 { font-size: 15px; font-weight: 600; margin: 5px 0 0; color: var(--primary); }
 
 /* ============================================================
-   Projects — List Page
+   Projects - List Page
    ============================================================ */
 .page-header { padding: 20px 0 24px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
 .page-header h1 { margin: 0 0 6px; }
@@ -291,7 +291,7 @@
 .pill.cat { background: var(--accent-soft); color: var(--accent); }
 
 /* ============================================================
-   Projects — Single Page
+   Projects - Single Page
    ============================================================ */
 .project-single { padding: 12px 0 60px; }
 .crumb { font-size: 13px; color: var(--secondary); font-family: 'JetBrains Mono', monospace; }
@@ -339,7 +339,7 @@ body.has-hero div.page-header h1 { display: none; }
 body.has-hero .post-title { display: none; }
 
 /* ============================================================
-   Profile — avatar + buttons
+   Profile - avatar + buttons
    ============================================================ */
 .profile img {
   border-radius: 50%;
@@ -361,7 +361,7 @@ body.has-hero .post-title { display: none; }
 }
 
 /* ============================================================
-   Home page — recent posts
+   Home page - recent posts
    ============================================================ */
 .home-recent {
   margin-top: 48px;

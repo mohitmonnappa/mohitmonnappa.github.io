@@ -4,7 +4,7 @@ subtitle: "LLM Input/Output Firewall"
 tech: ["Python", "Streamlit"]
 category: "Security"
 date: 2025-05-01
-summary: "Lightweight, CPU-friendly classifier that detects jailbreak attempts, PII extraction, toxic content, and prompt injection in LLM pipelines — with a real-time Streamlit dashboard."
+summary: "Lightweight, CPU-friendly classifier that detects jailbreak attempts, PII extraction, toxic content, and prompt injection in LLM pipelines - with a real-time Streamlit dashboard."
 ---
 
 SmartGuard is a firewall layer for LLM applications, designed to run without GPU infrastructure.

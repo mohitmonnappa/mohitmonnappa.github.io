@@ -1,7 +1,7 @@
 ---
 ShowToc: false
 hiddenInList: true
-title: "OverTheWire: Bandit — Level 21"
+title: "OverTheWire: Bandit - Level 21"
 date: 2024-01-21
 category: "Linux"
 tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]
@@ -26,7 +26,7 @@ A program is running automatically at regular intervals from cron, the time-base
 
 ## Solution
 
-Go to the cron directory to see the cron jobs. We get the path of the script that is being executed — `cat` the file to see what the script is doing. It reads the contents of the passwd file and redirects it to a file in the `/tmp` directory. Just `cat` that file:
+Go to the cron directory to see the cron jobs. We get the path of the script that is being executed - `cat` the file to see what the script is doing. It reads the contents of the passwd file and redirects it to a file in the `/tmp` directory. Just `cat` that file:
 
 ```bash
 cat /etc/cron.d/cronjob_bandit22

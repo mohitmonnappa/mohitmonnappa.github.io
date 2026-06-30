@@ -1,7 +1,7 @@
 ---
 ShowToc: false
 hiddenInList: true
-title: "OverTheWire: Bandit — Level 20"
+title: "OverTheWire: Bandit - Level 20"
 date: 2024-01-20
 category: "Linux"
 tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]

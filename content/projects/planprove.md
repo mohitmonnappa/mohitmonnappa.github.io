@@ -12,7 +12,7 @@ PlanProve is a research-focused AI agent framework centered on improving how age
 ## Design
 
 - Abstract class hierarchy separates tool definitions from the planning loop, making it easy to swap or extend tools without touching core logic
-- Supports flexible planning workflows — agents can re-plan mid-task based on intermediate results
+- Supports flexible planning workflows - agents can re-plan mid-task based on intermediate results
 
 ## Results
 

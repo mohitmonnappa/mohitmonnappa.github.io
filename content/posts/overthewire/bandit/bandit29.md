@@ -1,7 +1,7 @@
 ---
 ShowToc: false
 hiddenInList: true
-title: "OverTheWire: Bandit — Level 29"
+title: "OverTheWire: Bandit - Level 29"
 date: 2024-01-28
 category: "Linux"
 tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]
@@ -26,7 +26,7 @@ There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo
 
 ## Solution
 
-Clone the repo and go inside. There are multiple branches — check by:
+Clone the repo and go inside. There are multiple branches - check by:
 
 ```bash
 git branch -a
@@ -38,7 +38,7 @@ To go to a branch:
 git checkout branch_name
 ```
 
-Check the `dev` branch. Once you switch to a branch the file contents will be of that branch. Check the contents of the files — here, the README file has the password:
+Check the `dev` branch. Once you switch to a branch the file contents will be of that branch. Check the contents of the files - here, the README file has the password:
 
 ```bash
 cat README.md
