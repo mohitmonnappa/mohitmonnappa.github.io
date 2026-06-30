@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 13"
 date: 2024-01-13
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 14"
   url: "/posts/overthewire/bandit/bandit14/"
 ---
+hiddenInList: true
 
 The private key is present in the home directory. Use it to login as `bandit14` using SSH. The `-i` flag specifies the private key:
 

@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 1"
 date: 2024-01-01
 category: "Linux"
@@ -7,6 +8,7 @@ next:
   title: "Level 2"
   url: "/posts/overthewire/bandit/bandit02/"
 ---
+hiddenInList: true
 
 To display contents of a dashed file:
 

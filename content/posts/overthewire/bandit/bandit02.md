@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 2"
 date: 2024-01-02
 category: "Linux"
@@ -10,5 +11,6 @@ next:
   title: "Level 3"
   url: "/posts/overthewire/bandit/bandit03/"
 ---
+hiddenInList: true
 
 For spaces in the filename, enclose it with quotes.

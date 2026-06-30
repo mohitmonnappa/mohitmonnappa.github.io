@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 7"
 date: 2024-01-07
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 8"
   url: "/posts/overthewire/bandit/bandit08/"
 ---
+hiddenInList: true
 
 Just `cat` the file and pass it to `grep` with the word `millionth`:
 

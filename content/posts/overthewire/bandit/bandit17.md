@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 17"
 date: 2024-01-17
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 18"
   url: "/posts/overthewire/bandit/bandit18/"
 ---
+hiddenInList: true
 
 Use `diff` to compare lines of two files:
 

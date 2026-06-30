@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 11"
 date: 2024-01-11
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 12"
   url: "/posts/overthewire/bandit/bandit12/"
 ---
+hiddenInList: true
 
 To rotate the characters use the tool `tr`. To rotate by 13 positions:
 

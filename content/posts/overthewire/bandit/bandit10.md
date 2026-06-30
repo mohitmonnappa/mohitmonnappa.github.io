@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 10"
 date: 2024-01-10
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 11"
   url: "/posts/overthewire/bandit/bandit11/"
 ---
+hiddenInList: true
 
 Use `base64 -d` to decode the string:
 

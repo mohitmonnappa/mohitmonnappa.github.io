@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 29"
 date: 2024-01-28
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 30"
   url: "/posts/overthewire/bandit/bandit30/"
 ---
+hiddenInList: true
 
 Clone the repo and go inside. There are multiple branches — check by:
 

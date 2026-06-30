@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 8"
 date: 2024-01-08
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 9"
   url: "/posts/overthewire/bandit/bandit09/"
 ---
+hiddenInList: true
 
 Use `sort` to sort the words in dictionary order so that repeated words will be together.  
 Next use `uniq` to see the unique lines and count the number of words.  

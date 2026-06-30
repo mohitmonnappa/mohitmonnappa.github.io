@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 4"
 date: 2024-01-04
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 5"
   url: "/posts/overthewire/bandit/bandit05/"
 ---
+hiddenInList: true
 
 **Basic:** `cat` the entire directory because only one file is human readable.
 

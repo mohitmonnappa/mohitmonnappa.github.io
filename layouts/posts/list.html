@@ -19,7 +19,7 @@
 {{- end }}
 
 {{/* Use RegularPagesRecursive so nested subsections (e.g. overthewire/bandit/) are included */}}
-{{- $pages := .RegularPagesRecursive }}
+{{- $pages := where .RegularPagesRecursive "Params.hiddenInList" "!=" true }}
 
 {{- $paginator := .Paginate $pages }}
 

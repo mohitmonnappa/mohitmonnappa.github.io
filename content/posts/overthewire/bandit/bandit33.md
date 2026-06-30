@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 33"
 date: 2024-02-01
 category: "Linux"
@@ -7,5 +8,6 @@ prev:
   title: "Level 32"
   url: "/posts/overthewire/bandit/bandit32/"
 ---
+hiddenInList: true
 
 **All levels solved!!** 🎉

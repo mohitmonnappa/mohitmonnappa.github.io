@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 5"
 date: 2024-01-05
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 6"
   url: "/posts/overthewire/bandit/bandit06/"
 ---
+hiddenInList: true
 
 **Basic:** Find the entire directory with size parameter set to 1033 bytes, then pipe it to `file` which checks for dashed file using `--` and then pipe it to `grep` for ASCII text.
 

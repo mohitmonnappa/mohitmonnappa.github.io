@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 28"
 date: 2024-01-27
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 29"
   url: "/posts/overthewire/bandit/bandit29/"
 ---
+hiddenInList: true
 
 Clone the repo and go inside. See the git log:
 

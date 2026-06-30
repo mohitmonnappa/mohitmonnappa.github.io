@@ -1,4 +1,5 @@
 ---
+hiddenInList: true
 title: "OverTheWire: Bandit — Level 25 & 26"
 date: 2024-01-25
 category: "Linux"
@@ -10,6 +11,7 @@ next:
   title: "Level 27"
   url: "/posts/overthewire/bandit/bandit27/"
 ---
+hiddenInList: true
 
 This is a little tricky. First, print out the shell that `bandit26` is using:
 
