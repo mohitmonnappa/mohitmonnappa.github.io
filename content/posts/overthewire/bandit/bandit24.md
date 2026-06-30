@@ -1,4 +1,5 @@
 ---
+ShowToc: false
 hiddenInList: true
 title: "OverTheWire: Bandit — Level 24"
 date: 2024-01-24
@@ -14,9 +15,7 @@ next:
 
 ## Login
 
-```bash
 ssh bandit23@bandit.labs.overthewire.org -p 2220
-```
 
 ## Task
 

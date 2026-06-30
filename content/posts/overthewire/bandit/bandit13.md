@@ -1,4 +1,5 @@
 ---
+ShowToc: false
 hiddenInList: true
 title: "OverTheWire: Bandit — Level 13"
 date: 2024-01-13
@@ -14,9 +15,7 @@ next:
 
 ## Login
 
-```bash
 ssh bandit12@bandit.labs.overthewire.org -p 2220
-```
 
 ## Task
 
@@ -26,8 +25,6 @@ The password for the next level is stored in the file data.txt, which is a hexdu
 
 The private key is present in the home directory. Use it to login as `bandit14` using SSH. The `-i` flag specifies the private key:
 
-```bash
 ssh -p 2220 bandit14@localhost -i sshkey.private
-```
 
 > **Note:** The permissions of the private key file should be `700`.
