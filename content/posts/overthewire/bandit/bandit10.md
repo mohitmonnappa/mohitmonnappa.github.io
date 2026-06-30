@@ -11,7 +11,6 @@ next:
   title: "Level 11"
   url: "/posts/overthewire/bandit/bandit11/"
 ---
-hiddenInList: true
 
 Use `base64 -d` to decode the string:
 

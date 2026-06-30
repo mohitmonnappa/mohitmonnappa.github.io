@@ -11,7 +11,6 @@ next:
   title: "Level 13"
   url: "/posts/overthewire/bandit/bandit13/"
 ---
-hiddenInList: true
 
 We have the hexdump in ASCII. Use `mktemp -d` and do all the changes in the tmp folder.
 

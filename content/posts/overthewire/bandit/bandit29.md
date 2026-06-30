@@ -11,7 +11,6 @@ next:
   title: "Level 30"
   url: "/posts/overthewire/bandit/bandit30/"
 ---
-hiddenInList: true
 
 Clone the repo and go inside. There are multiple branches — check by:
 

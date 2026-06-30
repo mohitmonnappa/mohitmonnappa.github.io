@@ -11,7 +11,6 @@ next:
   title: "Level 5"
   url: "/posts/overthewire/bandit/bandit05/"
 ---
-hiddenInList: true
 
 **Basic:** `cat` the entire directory because only one file is human readable.
 

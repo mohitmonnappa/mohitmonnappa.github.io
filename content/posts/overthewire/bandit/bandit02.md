@@ -11,6 +11,5 @@ next:
   title: "Level 3"
   url: "/posts/overthewire/bandit/bandit03/"
 ---
-hiddenInList: true
 
 For spaces in the filename, enclose it with quotes.

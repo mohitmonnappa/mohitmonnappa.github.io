@@ -11,7 +11,6 @@ next:
   title: "Level 12"
   url: "/posts/overthewire/bandit/bandit12/"
 ---
-hiddenInList: true
 
 To rotate the characters use the tool `tr`. To rotate by 13 positions:
 

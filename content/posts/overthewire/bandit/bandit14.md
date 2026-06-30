@@ -11,7 +11,6 @@ next:
   title: "Level 15"
   url: "/posts/overthewire/bandit/bandit15/"
 ---
-hiddenInList: true
 
 While logged in as `bandit14`, use `nc` to send data:
 

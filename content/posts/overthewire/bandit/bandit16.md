@@ -11,7 +11,6 @@ next:
   title: "Level 17"
   url: "/posts/overthewire/bandit/bandit17/"
 ---
-hiddenInList: true
 
 Run `nmap` to see the services on the ports. Use the version argument and specify the port numbers:
 

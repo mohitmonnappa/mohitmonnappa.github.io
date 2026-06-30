@@ -11,7 +11,6 @@ next:
   title: "Level 24"
   url: "/posts/overthewire/bandit/bandit24/"
 ---
-hiddenInList: true
 
 The script will run as `bandit24` and it executes all the files in `/var/spool/bandit24/foo/` directory, then deletes them after a minute. We have to write a script to print bandit24's password and save it to a file so that the cron job will execute it.
 

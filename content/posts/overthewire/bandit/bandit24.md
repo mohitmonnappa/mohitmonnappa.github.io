@@ -11,7 +11,6 @@ next:
   title: "Level 25 & 26"
   url: "/posts/overthewire/bandit/bandit25/"
 ---
-hiddenInList: true
 
 We have to try all possibilities from `0000` to `9999` to get the password of the next level. Write a script that combines bandit24's password and the code with a space in between and saves it to a file, then `cat` the file and pipe it to `nc`.
 

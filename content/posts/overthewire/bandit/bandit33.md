@@ -8,6 +8,5 @@ prev:
   title: "Level 32"
   url: "/posts/overthewire/bandit/bandit32/"
 ---
-hiddenInList: true
 
 **All levels solved!!** 🎉

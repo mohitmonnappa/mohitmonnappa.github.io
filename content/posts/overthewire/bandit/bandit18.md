@@ -11,7 +11,6 @@ next:
   title: "Level 19"
   url: "/posts/overthewire/bandit/bandit19/"
 ---
-hiddenInList: true
 
 After logging in, the `.bashrc` file automatically logs you out instantly — so pass the command in quotes after the SSH query to execute commands before it logs you out:
 

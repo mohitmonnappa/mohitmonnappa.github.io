@@ -11,7 +11,6 @@ next:
   title: "Level 16"
   url: "/posts/overthewire/bandit/bandit16/"
 ---
-hiddenInList: true
 
 Use `openssl` with `s_client` to connect to the server. Login and type:
 

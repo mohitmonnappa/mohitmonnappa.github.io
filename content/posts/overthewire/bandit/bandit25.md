@@ -11,7 +11,6 @@ next:
   title: "Level 27"
   url: "/posts/overthewire/bandit/bandit27/"
 ---
-hiddenInList: true
 
 This is a little tricky. First, print out the shell that `bandit26` is using:
 

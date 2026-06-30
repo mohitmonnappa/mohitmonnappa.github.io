@@ -11,7 +11,6 @@ next:
   title: "Level 31"
   url: "/posts/overthewire/bandit/bandit31/"
 ---
-hiddenInList: true
 
 There is a feature called **tag** in git. Git tagging is a way to mark specific points in the history of the repository.
 

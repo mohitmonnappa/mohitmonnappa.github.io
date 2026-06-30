@@ -11,7 +11,6 @@ next:
   title: "Level 32"
   url: "/posts/overthewire/bandit/bandit32/"
 ---
-hiddenInList: true
 
 Read the `README.md` — it says we have to push a file named `key.txt` with the text `May I come in?`. But the `.gitignore` file ignores `.txt` files, so delete the `.gitignore` file and add the text to `key.txt`, then push it to the master branch to get the password:
 

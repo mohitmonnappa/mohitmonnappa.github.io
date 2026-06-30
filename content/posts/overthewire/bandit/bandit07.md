@@ -11,7 +11,6 @@ next:
   title: "Level 8"
   url: "/posts/overthewire/bandit/bandit08/"
 ---
-hiddenInList: true
 
 Just `cat` the file and pass it to `grep` with the word `millionth`:
 

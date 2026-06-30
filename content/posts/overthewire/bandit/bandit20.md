@@ -11,7 +11,6 @@ next:
   title: "Level 21"
   url: "/posts/overthewire/bandit/bandit21/"
 ---
-hiddenInList: true
 
 The setuid binary makes a connection to `localhost` on the port you specify as a command-line argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
 

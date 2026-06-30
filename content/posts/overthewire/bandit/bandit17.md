@@ -11,7 +11,6 @@ next:
   title: "Level 18"
   url: "/posts/overthewire/bandit/bandit18/"
 ---
-hiddenInList: true
 
 Use `diff` to compare lines of two files:
 

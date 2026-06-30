@@ -11,6 +11,5 @@ next:
   title: "Level 4"
   url: "/posts/overthewire/bandit/bandit04/"
 ---
-hiddenInList: true
 
 Use `ls -la` to show all files including hidden ones.

@@ -11,7 +11,6 @@ next:
   title: "Level 33"
   url: "/posts/overthewire/bandit/bandit33/"
 ---
-hiddenInList: true
 
 In Linux, using `printenv` will give all the environment variables. Some common ones that are good to know:
 

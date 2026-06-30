@@ -8,7 +8,6 @@ next:
   title: "Level 2"
   url: "/posts/overthewire/bandit/bandit02/"
 ---
-hiddenInList: true
 
 To display contents of a dashed file:
 
