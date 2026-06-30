@@ -19,7 +19,7 @@ SSH: `ssh bandit12@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions.
+The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.
 
 ## Solution
 

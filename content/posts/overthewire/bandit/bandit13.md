@@ -19,7 +19,7 @@ SSH: `ssh bandit13@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command "mktemp -d". Then copy the datafile using cp, and rename it using mv.
+The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you do not get the next password, but you get a private SSH key that can be used to log into the next level.
 
 ## Solution
 

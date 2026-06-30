@@ -19,7 +19,7 @@ SSH: `ssh bandit15@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
+The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
 
 ## Solution
 

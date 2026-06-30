@@ -16,7 +16,7 @@ SSH: `ssh bandit33@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-After all this git stuff, it's time for another escape. Good luck!
+At this moment, level 34 does not exist yet.
 
 ## Solution
 

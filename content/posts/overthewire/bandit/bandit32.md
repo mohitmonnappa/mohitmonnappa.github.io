@@ -19,7 +19,7 @@ SSH: `ssh bandit32@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via port 2220. The password for the user bandit31-git is the same as for the user bandit31. Clone the repository and find the password for the next level.
+After all this git stuff, it is time for another escape. Good luck!
 
 ## Solution
 

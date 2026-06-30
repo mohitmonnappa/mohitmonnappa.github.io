@@ -19,7 +19,7 @@ SSH: `ssh bandit14@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you do not get the next password directly, but you get a private SSH key that can be used to log into the next level.
+The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
 ## Solution
 

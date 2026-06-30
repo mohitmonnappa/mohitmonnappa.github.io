@@ -19,7 +19,7 @@ SSH: `ssh bandit18@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new.
+The password for the next level is stored in a file readme in the home directory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
 
 ## Solution
 

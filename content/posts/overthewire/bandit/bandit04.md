@@ -19,7 +19,7 @@ SSH: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-The password for the next level is stored in a hidden file in the inhere directory.
+The password for the next level is stored in the only human-readable file in the inhere directory.
 
 ## Solution
 

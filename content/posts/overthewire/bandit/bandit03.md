@@ -19,7 +19,7 @@ SSH: `ssh bandit3@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-The password for the next level is stored in a file called spaces in this filename located in the home directory.
+The password for the next level is stored in a hidden file in the inhere directory.
 
 ## Solution
 

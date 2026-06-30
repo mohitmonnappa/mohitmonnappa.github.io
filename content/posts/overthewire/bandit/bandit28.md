@@ -19,7 +19,7 @@ SSH: `ssh bandit28@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via port 2220. The password for the user bandit27-git is the same as for the user bandit27. Clone the repository and find the password for the next level.
+There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28. Clone the repository and find the password for the next level.
 
 ## Solution
 

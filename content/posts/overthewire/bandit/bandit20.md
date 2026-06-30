@@ -19,7 +19,7 @@ SSH: `ssh bandit20@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
-To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
+There is a setuid binary in the home directory that makes a connection to localhost on the port you specify as a command line argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
 
 ## Solution
 
