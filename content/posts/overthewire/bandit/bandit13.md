@@ -15,7 +15,7 @@ next:
 
 ## Login
 
-ssh bandit12@bandit.labs.overthewire.org -p 2220
+SSH: `ssh bandit12@bandit.labs.overthewire.org -p 2220`
 
 ## Task
 
