@@ -14,6 +14,9 @@ prev:
 
 SSH: `ssh bandit33@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit34.html
+
+
 ## Task
 
 At this moment, level 34 does not exist yet.

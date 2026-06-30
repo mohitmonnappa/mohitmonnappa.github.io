@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit14@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit15.html
+
+
 ## Task
 
 The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.

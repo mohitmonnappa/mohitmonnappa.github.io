@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit20@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit21.html
+
+
 ## Task
 
 There is a setuid binary in the home directory that makes a connection to localhost on the port you specify as a command line argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).

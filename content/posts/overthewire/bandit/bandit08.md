@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit8@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit9.html
+
+
 ## Task
 
 The password for the next level is stored in the file data.txt and is the only line of text that occurs only once.

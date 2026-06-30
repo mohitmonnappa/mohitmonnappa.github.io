@@ -14,6 +14,9 @@ next:
 
 SSH: `ssh bandit1@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit2.html
+
+
 ## Task
 
 The password for the next level is stored in a file called - located in the home directory.

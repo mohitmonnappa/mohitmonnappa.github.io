@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit32@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit33.html
+
+
 ## Task
 
 After all this git stuff, it is time for another escape. Good luck!

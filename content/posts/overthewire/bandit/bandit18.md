@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit18@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit19.html
+
+
 ## Task
 
 The password for the next level is stored in a file readme in the home directory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.

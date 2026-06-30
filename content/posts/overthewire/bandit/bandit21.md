@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit21@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit22.html
+
+
 ## Task
 
 A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.

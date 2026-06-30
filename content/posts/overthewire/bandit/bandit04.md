@@ -17,6 +17,9 @@ next:
 
 SSH: `ssh bandit4@bandit.labs.overthewire.org -p 2220`
 
+https://overthewire.org/wargames/bandit/bandit5.html
+
+
 ## Task
 
 The password for the next level is stored in the only human-readable file in the inhere directory.
