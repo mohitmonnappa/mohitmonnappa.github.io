@@ -25,11 +25,15 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit7.html
 The password for the next level is stored somewhere on the server and has all of the following properties: owned by user bandit7, owned by group bandit6, 33 bytes in size.
 
 ## Solution
+We have to go to the root folder `/` for this task.
 
-**Basic:** Go to root directory and find the entire directory with `-group`, `-user` and `-size`, pipe it to `file` and pipe it to `grep` to ASCII text.
+We just have to use the `find` command with the flags that are mentioned in the task. It's very similar to the previous level.
 
-**Full command:**
+Since the condition will be matched by just one file, a lot of Permission denied errors will come up so we can redirect the error code of `2` to `/dev/null` as follows:
 
 ```bash
-find . -group bandit6 -user bandit7 -size 33c -type f | xargs file * | grep "ASCII"
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
 ```
+<br>
+
+One liner: `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat`

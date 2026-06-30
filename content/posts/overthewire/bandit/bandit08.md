@@ -25,23 +25,25 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit9.html
 The password for the next level is stored in the file data.txt and is the only line of text that occurs only once.
 
 ## Solution
-
+Let's see the files present:
+```bash
+bandit8@bandit:~$ ls
+data.txt
+bandit8@bandit:~$ wc -l data.txt
+1001 data.txt
+```
 Use `sort` to sort the words in dictionary order so that repeated words will be together.  
 Next use `uniq` to see the unique lines and count the number of words.  
 `uniq -u` will directly give the unique word in the file, or you can display the count and grep `1` from there.
 
-**Simplest:**
-
 ```bash
 cat data.txt | sort -f -d | uniq -u
-```
-
-> `-f` is to ignore the case of the letter and `-d` is for dictionary ordering.
-
-**Second method:**
-
-```bash
+# or
 cat data.txt | sort -f -d | uniq -c | grep " 1 "
 ```
 
-> `-c` is to display the count, i.e. number of times it has been repeated.
+> `-f` is to ignore the case of the letter and `-d` is for dictionary ordering.  
+> `-c` is to display the count, i.e. number of times it has been repeated (not used here).
+<br>
+
+One liner: `cat data.txt | sort -f -d | uniq -u`

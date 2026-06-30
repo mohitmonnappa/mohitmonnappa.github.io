@@ -25,9 +25,19 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit8.html
 The password for the next level is stored in the file data.txt next to the word millionth.
 
 ## Solution
-
+Let's see the files present:
+```bash
+bandit7@bandit:~$ ls
+data.txt
+# print no. of lines in data.txt
+bandit7@bandit:~$ wc -l data.txt
+98567 data.txt
+```
 Just `cat` the file and pass it to `grep` with the word `millionth`:
 
 ```bash
 cat data.txt | grep "millionth"
 ```
+<br>
+
+One liner: `cat data.txt | grep "millionth" | awk '{print $2'}"`

@@ -25,9 +25,18 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit11.html
 The password for the next level is stored in the file data.txt, which contains base64 encoded data.
 
 ## Solution
-
-Use `base64 -d` to decode the string:
-
+Let's see the files present:
 ```bash
-cat data.txt | base64 -d
+bandit10@bandit:~$ ls
+data.txt
+bandit10@bandit:~$ file data.txt
+data.txt: ASCII text
+bandit10@bandit:~$ wc -l data.txt
+1 data.txt
+bandit10@bandit:~$ cat data.txt
+VGhlIHBhc3N3b3JkIGlzIHBZZk9ZNkh3VXNEajVyTDlVdnloVTdNQ212OHZONVJvCg==
 ```
+Use `base64 -d` to decode the base64 string.
+<br>
+
+One liner: `cat data.txt | base64 -d`

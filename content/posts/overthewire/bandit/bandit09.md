@@ -25,9 +25,21 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit10.html
 The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several = characters.
 
 ## Solution
-
-Use `strings` to print human readable content from a file and pass it to `grep` with `"=="` (2 equals signs since "a few" is more than 1):
+Let'see the files present:
+```bash
+bandit9@bandit:~$ ls
+data.txt
+```
+`file` command can be used to verify the type of file.
+```bash
+bandit9@bandit:~$ file data.txt
+data.txt: data
+```
+Use `strings` to print human readable content from a file and pass it to `grep` with `"=="` (mentioned in the task):
 
 ```bash
 strings data.txt | grep "=="
 ```
+<br>
+
+One liner: `strings data.txt | grep "=="`
