@@ -17,7 +17,7 @@ next:
 
 SSH: `ssh bandit9@bandit.labs.overthewire.org -p 2220`
 
-https://overthewire.org/wargames/bandit/bandit10.html
+Challenge URL: https://overthewire.org/wargames/bandit/bandit10.html
 
 
 ## Task
