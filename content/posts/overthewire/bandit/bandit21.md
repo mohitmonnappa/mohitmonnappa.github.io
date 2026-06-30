@@ -3,7 +3,7 @@ hiddenInList: true
 title: "OverTheWire: Bandit — Level 21"
 date: 2024-01-21
 category: "Linux"
-tags: ["CTF", "bandit", "overthewire", "walkthrough"]
+tags: ["CTF", "bandit", "overthewire", "walkthrough", "linux"]
 prev:
   title: "Level 20"
   url: "/posts/overthewire/bandit/bandit20/"
