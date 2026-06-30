@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>CTF on Mohit Monnappa</title><link>https://mohitmonnappa.github.io/tags/ctf/</link><description>Recent content in CTF on Mohit Monnappa</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://mohitmonnappa.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>OverTheWire: Bandit — Level 33</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit33/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit33/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Linux on Mohit Monnappa</title><link>https://mohitmonnappa.github.io/tags/linux/</link><description>Recent content in Linux on Mohit Monnappa</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://mohitmonnappa.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>OverTheWire: Bandit — Level 33</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit33/</link><pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit33/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
 &lt;p&gt;SSH: &lt;code&gt;ssh bandit33@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit34.html"&gt;https://overthewire.org/wargames/bandit/bandit34.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
@@ -524,40 +524,4 @@ Few ways to solve this:&lt;/p&gt;</description></item><item><title>OverTheWire: 
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&amp;lsquo;-&amp;rsquo; is a special symbol in linux, which is the standard option character. It is used for adding flags for commands.&lt;br&gt;
-This is why files with this symbol as the first symbol can&amp;rsquo;t be referenced like other files.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit — Full Walkthrough</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/walkthrough/</link><pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/walkthrough/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;This is my full collection of OverTheWire Bandit walkthroughs. Each level is covered on its own page with the commands and explanation used to solve it.&lt;/p&gt;
-&lt;h2 id="levels"&gt;Levels&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit01/"&gt;Level 1&lt;/a&gt; — Reading a dashed file&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit02/"&gt;Level 2&lt;/a&gt; — Spaces in filenames&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit03/"&gt;Level 3&lt;/a&gt; — Hidden files with ls -la&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit04/"&gt;Level 4&lt;/a&gt; — Finding human-readable files&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit05/"&gt;Level 5&lt;/a&gt; — Find file by size&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit06/"&gt;Level 6&lt;/a&gt; — Find file by user and group&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit07/"&gt;Level 7&lt;/a&gt; — Searching with grep&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit08/"&gt;Level 8&lt;/a&gt; — Unique lines with sort and uniq&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit09/"&gt;Level 9&lt;/a&gt; — Extracting strings from binary files&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit10/"&gt;Level 10&lt;/a&gt; — Base64 decoding&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit11/"&gt;Level 11&lt;/a&gt; — ROT13 with the tr command&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit12/"&gt;Level 12&lt;/a&gt; — Hexdumps and decompression&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit13/"&gt;Level 13&lt;/a&gt; — SSH login with a private key&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit14/"&gt;Level 14&lt;/a&gt; — Netcat basics&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit15/"&gt;Level 15&lt;/a&gt; — OpenSSL and encrypted connections&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit16/"&gt;Level 16&lt;/a&gt; — Port scanning with Nmap&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit17/"&gt;Level 17&lt;/a&gt; — Comparing files with diff&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit18/"&gt;Level 18&lt;/a&gt; — SSH remote command execution&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit19/"&gt;Level 19&lt;/a&gt; — SUID binary and Linux permissions&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit20/"&gt;Level 20&lt;/a&gt; — Netcat listeners and SUID binary&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit21/"&gt;Level 21&lt;/a&gt; — Cron jobs&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit22/"&gt;Level 22&lt;/a&gt; — Cron jobs and bash scripting&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit23/"&gt;Level 23&lt;/a&gt; — Cron jobs and bash scripting (continued)&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit24/"&gt;Level 24&lt;/a&gt; — Brute forcing with bash and netcat&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit25/"&gt;Level 25 &amp;amp; 26&lt;/a&gt; — Escaping restricted environments with more and vim&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit27/"&gt;Level 27&lt;/a&gt; — Git — cloning a repository&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit28/"&gt;Level 28&lt;/a&gt; — Git — log and checkout&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit29/"&gt;Level 29&lt;/a&gt; — Git — branching&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit30/"&gt;Level 30&lt;/a&gt; — Git — tags&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit31/"&gt;Level 31&lt;/a&gt; — Git — push, commit, and .gitignore&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit32/"&gt;Level 32&lt;/a&gt; — Environment variables and shell escape&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit33/"&gt;Level 33&lt;/a&gt; — All levels complete!&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+This is why files with this symbol as the first symbol can&amp;rsquo;t be referenced like other files.&lt;/p&gt;</description></item></channel></rss>
