@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit12/"
 ---
 
+## Login
+
+```bash
+ssh bandit10@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+## Solution
+
 To rotate the characters use the tool `tr`. To rotate by 13 positions:
 
 ```bash

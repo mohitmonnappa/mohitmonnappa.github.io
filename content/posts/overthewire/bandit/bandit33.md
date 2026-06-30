@@ -9,4 +9,16 @@ prev:
   url: "/posts/overthewire/bandit/bandit32/"
 ---
 
+## Login
+
+```bash
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+After all this git stuff, it's time for another escape. Good luck!
+
+## Solution
+
 **All levels solved!!** 🎉

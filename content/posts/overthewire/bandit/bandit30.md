@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit31/"
 ---
 
+## Login
+
+```bash
+ssh bandit29@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo via port 2220. The password for the user bandit29-git is the same as for the user bandit29. Clone the repository and find the password for the next level.
+
+## Solution
+
 There is a feature called **tag** in git. Git tagging is a way to mark specific points in the history of the repository.
 
 To see tags:

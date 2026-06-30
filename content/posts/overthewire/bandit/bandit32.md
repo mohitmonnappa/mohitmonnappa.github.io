@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit33/"
 ---
 
+## Login
+
+```bash
+ssh bandit31@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via port 2220. The password for the user bandit31-git is the same as for the user bandit31. Clone the repository and find the password for the next level.
+
+## Solution
+
 In Linux, using `printenv` will give all the environment variables. Some common ones that are good to know:
 
 | Variable | Description |

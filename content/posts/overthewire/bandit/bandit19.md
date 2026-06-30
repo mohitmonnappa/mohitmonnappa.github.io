@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit20/"
 ---
 
+## Login
+
+```bash
+ssh bandit18@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.
+
+## Solution
+
 The setuid binary is set to `bandit20`'s user. Check the file type of the given file — it says it is an executable, so try running it. The `euid` is set to `bandit20`, which means this gives the current user the privileges of the creator of the file. So just `cat` bandit20's password:
 
 ```bash

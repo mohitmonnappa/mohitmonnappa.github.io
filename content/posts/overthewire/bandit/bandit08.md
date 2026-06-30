@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit09/"
 ---
 
+## Login
+
+```bash
+ssh bandit7@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+The password for the next level is stored in the file data.txt next to the word millionth.
+
+## Solution
+
 Use `sort` to sort the words in dictionary order so that repeated words will be together.  
 Next use `uniq` to see the unique lines and count the number of words.  
 `uniq -u` will directly give the unique word in the file, or you can display the count and grep `1` from there.

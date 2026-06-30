@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit05/"
 ---
 
+## Login
+
+```bash
+ssh bandit3@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+The password for the next level is stored in a hidden file in the inhere directory.
+
+## Solution
+
 **Basic:** `cat` the entire directory because only one file is human readable.
 
 To find which file has ASCII text in the entire directory: find all files and pipe it to `file`.  

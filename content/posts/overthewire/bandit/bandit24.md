@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit25/"
 ---
 
+## Login
+
+```bash
+ssh bandit23@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+## Solution
+
 We have to try all possibilities from `0000` to `9999` to get the password of the next level. Write a script that combines bandit24's password and the code with a space in between and saves it to a file, then `cat` the file and pipe it to `nc`.
 
 **Script:**

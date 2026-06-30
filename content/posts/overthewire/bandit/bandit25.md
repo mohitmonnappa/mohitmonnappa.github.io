@@ -12,6 +12,20 @@ next:
   url: "/posts/overthewire/bandit/bandit27/"
 ---
 
+## Login
+
+```bash
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+Level 25: A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. You will need to brute-force all 10,000 combinations.
+
+Level 26: Logging in to bandit26 from bandit25 should be fairly easy. The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+## Solution
+
 This is a little tricky. First, print out the shell that `bandit26` is using:
 
 ```bash

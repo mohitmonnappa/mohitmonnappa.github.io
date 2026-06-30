@@ -12,4 +12,16 @@ next:
   url: "/posts/overthewire/bandit/bandit03/"
 ---
 
+## Login
+
+```bash
+ssh bandit1@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+The password for the next level is stored in a file called - located in the home directory.
+
+## Solution
+
 For spaces in the filename, enclose it with quotes.

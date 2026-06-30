@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit32/"
 ---
 
+## Login
+
+```bash
+ssh bandit30@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via port 2220. The password for the user bandit30-git is the same as for the user bandit30. Clone the repository and find the password for the next level.
+
+## Solution
+
 Read the `README.md` — it says we have to push a file named `key.txt` with the text `May I come in?`. But the `.gitignore` file ignores `.txt` files, so delete the `.gitignore` file and add the text to `key.txt`, then push it to the master branch to get the password:
 
 ```bash

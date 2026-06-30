@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit23/"
 ---
 
+## Login
+
+```bash
+ssh bandit21@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
+
+## Solution
+
 Print the shell script. Since this will run as `bandit23`, `whoami` will give `bandit23` — so to get the `mytarget` value, copy the command and replace `myname` with `bandit23` so it will hash it with `bandit23` as the user. Then `cat` the output in the `/tmp` folder:
 
 ```bash

@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit13/"
 ---
 
+## Login
+
+```bash
+ssh bandit11@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions.
+
+## Solution
+
 We have the hexdump in ASCII. Use `mktemp -d` and do all the changes in the tmp folder.
 
 We need to reverse the hexdump using `xxd -r`:

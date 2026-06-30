@@ -12,6 +12,18 @@ next:
   url: "/posts/overthewire/bandit/bandit22/"
 ---
 
+## Login
+
+```bash
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+```
+
+## Task
+
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+## Solution
+
 Go to the cron directory to see the cron jobs. We get the path of the script that is being executed — `cat` the file to see what the script is doing. It reads the contents of the passwd file and redirects it to a file in the `/tmp` directory. Just `cat` that file:
 
 ```bash
