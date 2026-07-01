@@ -25,10 +25,14 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit13.html
 The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.
 
 ## Solution
+Let's see the files present:
+```bash
+bandit12@bandit:~$ ls
+data.txt
+```
+We have the hexdump in ASCII. Use `mktemp -d` and do all the changes in the tmp folder, since changes in the `/home` and `/tmp` folder aren't allowed.
 
-We have the hexdump in ASCII. Use `mktemp -d` and do all the changes in the tmp folder.
-
-We need to reverse the hexdump using `xxd -r`:
+To reverse the hexdump:
 
 ```bash
 xxd -r filename.txt newfile
@@ -49,8 +53,12 @@ Use the `file` command to get the file signature, then use `mv` to rename to tha
 gunzip filename
 
 # tar
-tar -x -f archivename
+tar -xf archivename
 
 # bzip2
 bzip2 filename
 ```
+<br>
+
+There is no one liner as there are many steps.
+> **Extra:** Try to create a shell script for this.
