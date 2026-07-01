@@ -31,5 +31,13 @@ Run `nmap` to see the services on the ports. Use the version argument and specif
 ```bash
 nmap -sV -p 31000-32000
 ```
+There are 2 ports that are running the SSL service. One of them returns whatever is sent to it and the other is the correct port (the one which we require).  
+<br>
 
-Then through `ncat`, use the SSL option, connect, and submit the current level's password.
+Port 31790 is the correct port. Now to connect to it, we could use `openssl s_client` like the previous level, but it didn't seem to work.  
+<br>
+
+Therefore, we can use `ncat` with the `--ssl` flag and connect to the port and submit the current level's password:
+```bash
+bandit16@bandit:~$ ncat --ssl localhost 31790
+```

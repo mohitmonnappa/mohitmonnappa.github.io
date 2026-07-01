@@ -25,11 +25,23 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit18.html
 There are 2 files in the home directory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new.
 
 ## Solution
+We got the RSA private key from the previous level, so we can use it with the `-i` flag in SSH command.
+<br>
 
-Use `diff` to compare lines of two files:
+**Note**: Don't forget to make a note of this level's password at `/etc/bandit_pass/bandit17`.
+<br>
+
+These are the files present:
+```bash
+bandit17@bandit:~$ ls
+passwords.new  passwords.old
+```
+We can use `diff` to compare lines of two files:
 
 ```bash
 diff --suppress-common-lines -i -y passwords.old passwords.new
 ```
-
 > `-i` is to ignore cases and `-y` is to display side by side.
+<br>
+
+One liner: `diff --suppress-common-lines -i -y passwords.new passwords.old | awk {'print $1'}`

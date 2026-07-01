@@ -25,9 +25,13 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit16.html
 The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
 
 ## Solution
+OpenSSL is a library for secure communication over networks. It implements the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) cryptographic protocols.  
+<br>
 
-Use `openssl` with `s_client` to connect to the server. Login and type:
+`openssl s_client` is the implementation of a simple client that connects to a server using SSL/TLS.
+Use `openssl` with `s_client` to connect to the server:
 
 ```bash
 openssl s_client -host localhost -port 30001
 ```
+Then enter the password of level 15 to get the password of level 16.

@@ -25,13 +25,17 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit21.html
 There is a setuid binary in the home directory that makes a connection to localhost on the port you specify as a command line argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
 
 ## Solution
-
+Files present:
+```bash
+bandit20@bandit:~$ ls
+suconnect
+```
 The setuid binary makes a connection to `localhost` on the port you specify as a command-line argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
 
 To achieve this, set up a netcat listener to get back the password. Start a netcat server in the background using `&` (ampersand):
 
 ```bash
-echo "0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO" | nc -l -p 5555 &
+echo "4pIjcunZ0fK2vmp3IwfG8Vf7VhxD6pOA" | nc -l -p 5555 &
 ./suconnect 5555
 ```
 

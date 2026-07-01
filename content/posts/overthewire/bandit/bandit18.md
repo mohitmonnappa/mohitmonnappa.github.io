@@ -26,8 +26,16 @@ The password for the next level is stored in a file readme in the home directory
 
 ## Solution
 
-After logging in, the `.bashrc` file automatically logs you out instantly - so pass the command in quotes after the SSH query to execute commands before it logs you out:
+After logging in, the `.bashrc` file automatically logs you out instantly - so pass the command in quotes after the SSH query to execute commands before it logs you out.  
+First send `ls` and we see `readme` file is present, so just `cat` the readme file.
+```bash
+bob@laptop:~/documents$ ssh bandit.labs.overthewire.org -p 2220 -l bandit18 "ls";
 
-ssh -l bandit18 bandit.labs.overthewire.org -p 2220 "cat readme"
+-- SNIP
 
-First use `ls` in quotes and we see `readme` file is present, so just `cat` the readme file.
+bandit18@bandit.labs.overthewire.org's password:
+readme
+```
+<br>
+
+One liner: `ssh bandit.labs.overthewire.org -p 2220 -l bandit18 "cat readme";`

@@ -60,5 +60,4 @@ bzip2 filename
 ```
 <br>
 
-There is no one liner as there are many steps.
 > **Extra:** Try to create a shell script for this.

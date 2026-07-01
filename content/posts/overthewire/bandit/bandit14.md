@@ -25,11 +25,11 @@ Challenge URL: https://overthewire.org/wargames/bandit/bandit15.html
 The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
 ## Solution
+We got the private key for `bandit14` and logged in in the previous level itself so check the previous writeup to know how to log in.
+<br>
 
-While logged in as `bandit14`, use `nc` to send data:
+While logged in as `bandit14`, use `nc` to send data, i.e., level 14's password:
 
 ```bash
 nc localhost 30000
 ```
-
-Then enter Level 14's password.
