@@ -172,29 +172,40 @@
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
 &lt;p&gt;To gain access to the next level, you should use the setuid binary in the home directory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.&lt;/p&gt;
 &lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;The setuid binary is set to &lt;code&gt;bandit20&lt;/code&gt;&amp;rsquo;s user. Check the file type of the given file - it says it is an executable, so try running it. The &lt;code&gt;euid&lt;/code&gt; is set to &lt;code&gt;bandit20&lt;/code&gt;, which means this gives the current user the privileges of the creator of the file. So just &lt;code&gt;cat&lt;/code&gt; bandit20&amp;rsquo;s password:&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 18</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit18/</link><pubDate>Thu, 18 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit18/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
-&lt;p&gt;SSH: &lt;code&gt;ssh bandit18@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit19.html"&gt;https://overthewire.org/wargames/bandit/bandit19.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="task"&gt;Task&lt;/h2&gt;
-&lt;p&gt;The password for the next level is stored in a file readme in the home directory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.&lt;/p&gt;
-&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;After logging in, the &lt;code&gt;.bashrc&lt;/code&gt; file automatically logs you out instantly - so pass the command in quotes after the SSH query to execute commands before it logs you out:&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 17</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit17/</link><pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit17/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
-&lt;p&gt;SSH: &lt;code&gt;ssh bandit17@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit18.html"&gt;https://overthewire.org/wargames/bandit/bandit18.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="task"&gt;Task&lt;/h2&gt;
-&lt;p&gt;There are 2 files in the home directory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new.&lt;/p&gt;
-&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;Use &lt;code&gt;diff&lt;/code&gt; to compare lines of two files:&lt;/p&gt;
+&lt;p&gt;The files present are:&lt;/p&gt;
 &lt;div class="code"&gt;
 &lt;div class="code-head"&gt;
 &lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="lang"&gt;bash&lt;/span&gt;
 &lt;/div&gt;
 &lt;div class="code-body"&gt;
-&lt;div class="gutter" aria-hidden="true"&gt;1&lt;/div&gt;
-&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;diff --suppress-common-lines -i -y passwords.old passwords.new&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="gutter" aria-hidden="true"&gt;1
+2
+3
+4&lt;/div&gt;
+&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bandit19@bandit:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bandit20-do
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bandit19@bandit:~$ ls bandit20-do -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-rwsr-x--- &lt;span class="m"&gt;1&lt;/span&gt; bandit20 bandit19 &lt;span class="m"&gt;14880&lt;/span&gt; Jun &lt;span class="m"&gt;24&lt;/span&gt; 14:58 bandit20-do&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;blockquote style="border-left:3px solid var(--line);padding:4px 16px;margin:18px 0;color:var(--ink-soft);"&gt;&lt;p&gt;&lt;code&gt;-i&lt;/code&gt; is to ignore cases and &lt;code&gt;-y&lt;/code&gt; is to display side by side.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 16</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit16/</link><pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit16/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;The setuid binary is set to &lt;code&gt;bandit20&lt;/code&gt;&amp;rsquo;s user. Check the file type of the given file - it says it is an executable, so try running it. The &lt;code&gt;euid&lt;/code&gt; is set to &lt;code&gt;bandit20&lt;/code&gt;, which means this gives the current user the privileges of the creator of the file. So just &lt;code&gt;cat&lt;/code&gt; bandit20&amp;rsquo;s password:
+&lt;br&gt;&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 18</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit18/</link><pubDate>Thu, 18 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit18/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;SSH: &lt;code&gt;ssh bandit18@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit19.html"&gt;https://overthewire.org/wargames/bandit/bandit19.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="task"&gt;Task&lt;/h2&gt;
+&lt;p&gt;The password for the next level is stored in a file readme in the home directory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.&lt;/p&gt;
+&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
+&lt;p&gt;After logging in, the &lt;code&gt;.bashrc&lt;/code&gt; file automatically logs you out instantly - so pass the command in quotes after the SSH query to execute commands before it logs you out.&lt;br&gt;
+First send &lt;code&gt;ls&lt;/code&gt; and we see &lt;code&gt;readme&lt;/code&gt; file is present, so just &lt;code&gt;cat&lt;/code&gt; the readme file.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 17</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit17/</link><pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit17/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;SSH: &lt;code&gt;ssh bandit17@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit18.html"&gt;https://overthewire.org/wargames/bandit/bandit18.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="task"&gt;Task&lt;/h2&gt;
+&lt;p&gt;There are 2 files in the home directory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new.&lt;/p&gt;
+&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
+&lt;p&gt;We got the RSA private key from the previous level, so we can use it with the &lt;code&gt;-i&lt;/code&gt; flag in SSH command.
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Don&amp;rsquo;t forget to make a note of this level&amp;rsquo;s password at &lt;code&gt;/etc/bandit_pass/bandit17&lt;/code&gt;.
+&lt;br&gt;&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 16</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit16/</link><pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit16/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
 &lt;p&gt;SSH: &lt;code&gt;ssh bandit16@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit17.html"&gt;https://overthewire.org/wargames/bandit/bandit17.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
@@ -204,55 +215,55 @@
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
 &lt;p&gt;The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.&lt;/p&gt;
 &lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;Use &lt;code&gt;openssl&lt;/code&gt; with &lt;code&gt;s_client&lt;/code&gt; to connect to the server. Login and type:&lt;/p&gt;
-&lt;div class="code"&gt;
-&lt;div class="code-head"&gt;
-&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="lang"&gt;bash&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="code-body"&gt;
-&lt;div class="gutter" aria-hidden="true"&gt;1&lt;/div&gt;
-&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;openssl s_client -host localhost -port &lt;span class="m"&gt;30001&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description></item><item><title>OverTheWire: Bandit - Level 14</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit14/</link><pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit14/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;OpenSSL is a library for secure communication over networks. It implements the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) cryptographic protocols.&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;openssl s_client&lt;/code&gt; is the implementation of a simple client that connects to a server using SSL/TLS.
+Use &lt;code&gt;openssl&lt;/code&gt; with &lt;code&gt;s_client&lt;/code&gt; to connect to the server:&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 14</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit14/</link><pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit14/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
 &lt;p&gt;SSH: &lt;code&gt;ssh bandit14@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit15.html"&gt;https://overthewire.org/wargames/bandit/bandit15.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
 &lt;p&gt;The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.&lt;/p&gt;
 &lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;While logged in as &lt;code&gt;bandit14&lt;/code&gt;, use &lt;code&gt;nc&lt;/code&gt; to send data:&lt;/p&gt;
-&lt;div class="code"&gt;
-&lt;div class="code-head"&gt;
-&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="lang"&gt;bash&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class="code-body"&gt;
-&lt;div class="gutter" aria-hidden="true"&gt;1&lt;/div&gt;
-&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;nc localhost &lt;span class="m"&gt;30000&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Then enter Level 14&amp;rsquo;s password.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 13</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit13/</link><pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit13/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;We got the private key for &lt;code&gt;bandit14&lt;/code&gt; and logged in in the previous level itself so check the previous writeup to know how to log in.
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;While logged in as &lt;code&gt;bandit14&lt;/code&gt;, use &lt;code&gt;nc&lt;/code&gt; to send data, i.e., level 14&amp;rsquo;s password:&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 13</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit13/</link><pubDate>Sat, 13 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit13/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
 &lt;p&gt;SSH: &lt;code&gt;ssh bandit13@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit14.html"&gt;https://overthewire.org/wargames/bandit/bandit14.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
 &lt;p&gt;The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you do not get the next password, but you get a private SSH key that can be used to log into the next level.&lt;/p&gt;
 &lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;The private key is present in the home directory. Use it to login as &lt;code&gt;bandit14&lt;/code&gt; using SSH. The &lt;code&gt;-i&lt;/code&gt; flag specifies the private key:&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 12</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit12/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit12/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
-&lt;p&gt;SSH: &lt;code&gt;ssh bandit12@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit13.html"&gt;https://overthewire.org/wargames/bandit/bandit13.html&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="task"&gt;Task&lt;/h2&gt;
-&lt;p&gt;The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.&lt;/p&gt;
-&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
-&lt;p&gt;We have the hexdump in ASCII. Use &lt;code&gt;mktemp -d&lt;/code&gt; and do all the changes in the tmp folder.&lt;/p&gt;
-&lt;p&gt;We need to reverse the hexdump using &lt;code&gt;xxd -r&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s see the files present:&lt;/p&gt;
 &lt;div class="code"&gt;
 &lt;div class="code-head"&gt;
 &lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="lang"&gt;bash&lt;/span&gt;
 &lt;/div&gt;
 &lt;div class="code-body"&gt;
-&lt;div class="gutter" aria-hidden="true"&gt;1&lt;/div&gt;
-&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;xxd -r filename.txt newfile&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="gutter" aria-hidden="true"&gt;1
+2&lt;/div&gt;
+&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bandit13@bandit:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;HINT sshkey.private&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Use the &lt;code&gt;file&lt;/code&gt; command to get the file signature, then use &lt;code&gt;mv&lt;/code&gt; to rename to that extension.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 11</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit11/</link><pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit11/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;The private key is present in the home directory. Copy the file to your system and change its permissions to 700 using &lt;code&gt;chmod&lt;/code&gt;.&lt;br&gt;
+Use it to login as &lt;code&gt;bandit14&lt;/code&gt; using the &lt;code&gt;-i&lt;/code&gt; flag which is used to specify the private key:&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 12</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit12/</link><pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit12/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
+&lt;p&gt;SSH: &lt;code&gt;ssh bandit12@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit13.html"&gt;https://overthewire.org/wargames/bandit/bandit13.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="task"&gt;Task&lt;/h2&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed.&lt;/p&gt;
+&lt;h2 id="solution"&gt;Solution&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s see the files present:&lt;/p&gt;
+&lt;div class="code"&gt;
+&lt;div class="code-head"&gt;
+&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="d"&gt;&lt;/span&gt;&lt;span class="lang"&gt;bash&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="code-body"&gt;
+&lt;div class="gutter" aria-hidden="true"&gt;1
+2&lt;/div&gt;
+&lt;div class="src-wrap"&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bandit12@bandit:~$ ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;data.txt&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;We have the hexdump in ASCII. Use &lt;code&gt;mktemp -d&lt;/code&gt; and do all the changes in the tmp folder, since changes in the &lt;code&gt;/home&lt;/code&gt; and &lt;code&gt;/tmp&lt;/code&gt; folder aren&amp;rsquo;t allowed.&lt;/p&gt;</description></item><item><title>OverTheWire: Bandit - Level 11</title><link>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit11/</link><pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate><guid>https://mohitmonnappa.github.io/posts/overthewire/bandit/bandit11/</guid><description>&lt;h2 id="login"&gt;Login&lt;/h2&gt;
 &lt;p&gt;SSH: &lt;code&gt;ssh bandit11@bandit.labs.overthewire.org -p 2220&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Challenge URL: &lt;a href="https://overthewire.org/wargames/bandit/bandit12.html"&gt;https://overthewire.org/wargames/bandit/bandit12.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
