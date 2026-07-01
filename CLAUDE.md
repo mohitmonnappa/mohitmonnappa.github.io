@@ -30,7 +30,7 @@ PaperMod partials live in `themes/PaperMod/layouts/_partials/`. Project files in
 
 All custom styles live in **`assets/css/extended/custom.css`**. PaperMod automatically loads every file in `assets/css/extended/` after its own CSS. Do not create `static/css/` files - they won't integrate with PaperMod's variable system.
 
-Dark mode uses `.dark` body class (PaperMod convention, not `[data-theme="dark"]`). CSS custom properties: `--accent` (teal), `--accent-soft`, `--primary`, `--secondary`, `--border`, `--entry` from PaperMod; `--main-width: 860px` set in custom.css.
+`defaultTheme = "dark"` in `hugo.toml` `[params]`, so the site loads in dark mode by default (PaperMod's theme-toggle JS still lets visitors switch, saved to `localStorage`). Dark mode uses `.dark` body class (PaperMod convention, not `[data-theme="dark"]`) - always define both a `:root` and a `.dark` value when adding a color variable. CSS custom properties: `--accent` (teal), `--accent-soft`, `--primary`, `--secondary`, `--border`, `--entry` from PaperMod; `--main-width: 860px` set in custom.css.
 
 ### Content structure
 
@@ -46,6 +46,8 @@ content/
 ```
 
 `mainSections = ["posts"]` in `hugo.toml` - only this section appears on the home page and in PaperMod's built-in nav links.
+
+Individual level pages (e.g. `bandit01.md`) set `hiddenInList: true` and `hiddenInHomeList: true` in front matter so they're excluded from `layouts/posts/list.html` and the home page's recent-posts list respectively - only `walkthrough.md` (the index) shows up there. New per-level writeups need both flags to stay consistent with this pattern.
 
 ### Front matter for posts
 
